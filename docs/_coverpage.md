@@ -1,5 +1,6 @@
 # JS全栈探索
 
-DO MORE DO BETTER
+### DO MORE DO BETTER
+### You need death line
 
-[Get Started](/)
+#### :alien: :running:
