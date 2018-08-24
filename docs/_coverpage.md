@@ -3,5 +3,3 @@
 DO MORE DO BETTER
 
 [Get Started](/)
-
-![color](#F3F1E2)
