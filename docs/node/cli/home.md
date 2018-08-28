@@ -31,6 +31,35 @@ console.log('argv', process.argv) // [node路径, 执行脚本路径, 参数, �
 
 ## 处理命令行参数 commander模块
 
+*参数解析*
+
+`.option()`方法用来定义带选项的 commander. 下面的例子会解析来自 process.argv 指定的参数和选项，没有匹配任何选项的参数将会放到 program.args 数组中
+
+```
+#!/usr/bin/env node
+var program = require('commander');
+
+program
+  .version('0.0.1')
+  .option('-p, --peppers', 'Add peppers')
+  .option('-P, --pineapple', 'Add pineapple')
+  .option('-b, --bbq-sauce', 'Add bbq sauce')
+  .option('-c, --cheese [type]', 'Add the specified type of cheese [marble]', 'marble')
+  .parse(process.argv);
+
+console.log('you ordered a pizza with:');
+if (program.peppers) console.log('  - peppers');
+if (program.pineapple) console.log('  - pineapple');
+if (program.bbqSauce) console.log('  - bbq');
+console.log('  - %s cheese', program.cheese);
+
+```
+
+*添加命令*
+
+`command(name [name])`  添加一个command命令, 并且在之后添加action方法来处理command命令的回调
+`[]`里的name是选填的, 如果写了会传入action内的回调
+
 ```
 #!/usr/bin/env node
 
@@ -48,8 +77,8 @@ program
 program
 .command("sync <name>")
 .description("同步下姓名")
-.action((big) => {
-  console.log(chalk.red(big))
+.action((name) => {
+  console.log(chalk.red(name))
 })
 
 console.log(program.pig)
