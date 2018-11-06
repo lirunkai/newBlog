@@ -4,8 +4,15 @@
 
 ## 获取信息
 
-`process.cwd()` 获取当前执行文件的目录
+`process.cwd()` 获取当前执行文件的目录, 通过`process.env.PWD`也可以访问
 
 `process.version` 通常用来对node版本进行检查, 有一些属性在低版本node下是不支持的, 可以通过这个api来进行判断
+
+### 画重点 经常使用的
+
+`process.argv` 
+
+`process.execArgv`
+
 
 ## 可以做什么
