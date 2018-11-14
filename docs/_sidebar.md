@@ -9,6 +9,6 @@
   * [内置类型](js/内置类型.md)
   * [this指向](js/this指向.md)
 
-* [有意思的](算法/README.md)  
+* [有意思的](algorithm/README.md)  
 
-  * [排序](算法/home.md)
+  * [排序](algorithm/home.md)
