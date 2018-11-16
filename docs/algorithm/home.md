@@ -121,13 +121,12 @@ function insertSort(arr){
 
 ```
 function mergeSort(arr){
-  splitFn(arr)
-  funcion splitFn(arr){
+  function splitFn(arr){
     if(arr.length == 1) return arr;
     let mid = Math.floor(arr.length/2)
     let left = arr.slice(0, mid)
     let right = arr.slice(mid)
-    return merge(argument.callee(left), argument.callee(right))
+    return merge(splitFn(left), splitFn(right))
   }
 
   function merge(left, right){
@@ -141,6 +140,7 @@ function mergeSort(arr){
     }
     return result.concat(left.slice(ileft)).concat(right.slice(jright))
   }
+  return splitFn(arr)
 }
 
 ```
