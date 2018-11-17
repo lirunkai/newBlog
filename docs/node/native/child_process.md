@@ -76,7 +76,9 @@
 
 这里主要讲一些childProcess这个类, 因为每个异步进程返回的都是这个类的实例， 这个类代表衍生的子进程, 通过这个类我们可以监控子进程的运行
 
-### message事件 子进程调用`process.send()`发送消息后, 会触发message
+### message事件
+
+子进程调用`process.send()`发送消息后, 会触发message
 
 **childProcess.send(message)**
 
@@ -88,9 +90,13 @@
 2. 无法创建子进程
 3. 子进程无法被杀死
 
-### close事件  子进程的stdio流被关闭时触发， 监听函数`cb(code, signal)`执行 `code`退出码 `signal`退出信号
+### close事件  
 
-### exit事件 子进程关闭触发，和close的回调参数一样
+子进程的stdio流被关闭时触发， 监听函数`cb(code, signal)`执行 `code`退出码 `signal`退出信号
+
+### exit事件
+
+子进程关闭触发，和close的回调参数一样
 
 **childProcess.kill(signal)** 向子进程发送一个信号。
 
@@ -98,7 +104,9 @@
 
 ---
 
-### disconnect事件 父进程或子进程显式的调用`disconnect()`后触发disconnect事件。
+### disconnect事件
+
+父进程或子进程显式的调用`disconnect()`后触发disconnect事件。
 
 **childProcess.disconnect()** 关闭父子间的IPC通道
 
