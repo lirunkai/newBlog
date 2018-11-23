@@ -9,6 +9,10 @@
 
   * [内置类型](js/内置类型.md)
   * [this指向](js/this指向.md)
+  * [Array](js/array.md)
+  * [String](js/string.md)
+
+* [WebApi](WebApi/README.md)
 
 * [有意思的js](algorithm/README.md)  
 
