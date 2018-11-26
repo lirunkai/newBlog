@@ -2,21 +2,13 @@
 
 基础知识, 列一下api, 然后记录下一些巧妙的用法, 以及一些容易出错的地方.
 
-`reduce()`
-
-`map()`
-
-`forEach(fn)`
-
-数组中的每个选项都运行fn，**返回undefined,不可链式调用**
-
 ## 返回新数组
 
 `Array.from(likeArr, fn)`
 
 将类数组转换成数组, 如果提供了fn, 数组内的每一项都会执行fn, 返回一个新数组
 
-`Array.of(element)`
+`Array.of(element, element1, element2)`
 
 创建一个具有可变数量参数的新数组实例
 
@@ -30,7 +22,7 @@
 
 `map(fn)`
 
-数组中的每一项都运行fn, 返回由fn的返回值组成的新数组, 返回的undefined会保留
+数组中的每一项都运行fn, **返回由fn的返回值组成的新数组, 返回的undefined会保留**
 
 ```
 let x = [1,2,3,4,5]
@@ -47,6 +39,18 @@ x.map(item => {
 `slice(start,end)`
 
 **浅拷贝** 数组的一部分返回， 如果为负数表示倒数第几个
+
+```
+// tribonacci([1,2,3],10) => [1,2,3,6,11,20,37,68,125,230]
+
+function tribonacci(signature,n){  
+  for (var i = 0; i < n-3; i++) {
+    signature.push(signature[i] + signature[i+1] + signature[i+2]);
+  }
+  return signature.slice(0, n); //return trib - length of n
+}
+
+```
 
 ## 修改原数组
 
@@ -119,3 +123,7 @@ x.map(item => {
 使用累加器把数组的值进行累加简化成单个值
 
 fn(累加值，当前值， 当前索引, arr)
+
+`forEach(fn)`
+
+数组中的每个选项都运行fn，**返回undefined,不可链式调用**

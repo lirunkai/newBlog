@@ -17,3 +17,7 @@
 * [有意思的js](algorithm/README.md)  
 
   * [排序算法](algorithm/home.md)
+
+* [计算机](computer/README.md)
+
+  * [策略模式和状态模式](computer/策略模式&状态模式.md)
