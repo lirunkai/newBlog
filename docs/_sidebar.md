@@ -7,6 +7,7 @@
 
 * [javascript](js/README.md)
 
+  * [声明](js/声明.md)
   * [内置类型](js/内置类型.md)
   * [this指向](js/this指向.md)
   * [Array](js/array.md)
