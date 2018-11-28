@@ -13,7 +13,9 @@
   * [Array](js/array.md)
   * [String](js/string.md)
 
-* [WebApi](WebApi/README.md)
+* [WebApi](webApi/README.md)
+
+  * [全屏](webApi/fullscreen.md)
 
 * [有意思的js](algorithm/README.md)  
 
@@ -22,3 +24,7 @@
 * [计算机](computer/README.md)
 
   * [策略模式和状态模式](computer/策略模式&状态模式.md)
+
+  * [简单的一些模式](computer/简单的一些模式.md)
+
+  * [观察者模式](computer/观察者模式.md)
