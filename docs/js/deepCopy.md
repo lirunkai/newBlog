@@ -10,4 +10,4 @@
 let newObj = JSON.parse(JSON.stringify(obj))
 ```
 
-2. 
+2.

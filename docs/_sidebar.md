@@ -17,6 +17,8 @@
 
   * [全屏](webApi/fullscreen.md)
 
+  * [MutationObserver](webApi/MutationObserver.md)
+
 * [有意思的js](algorithm/README.md)  
 
   * [排序算法](algorithm/home.md)
@@ -28,3 +30,5 @@
   * [简单的一些模式](computer/简单的一些模式.md)
 
   * [观察者模式](computer/观察者模式.md)
+
+  * [一些名次](computer/notification.md)
