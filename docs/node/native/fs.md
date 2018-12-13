@@ -123,7 +123,7 @@ flags   `fs.constants.COPYFILE_EXCL` 如果 dest 已存在，则拷贝失败
 
 `fs.appendFile(path, data, [option{encoding, mode, flag}], cb(err))`
 
-异步追加数据到文件
+异步追加数据到文件，如果文件不存在, 创建文件
 
 ## 删
 

@@ -60,6 +60,16 @@ console.log('  - %s cheese', program.cheese);
 `command(name [name])`  添加一个command命令, 并且在之后添加action方法来处理command命令的回调
 `[]`里的name是选填的, 如果写了会传入action内的回调
 
+
+*命令的行为*
+
+`action(cb(command的可传入参数))`  command命令触发后,执行action进行逻辑代码编写。
+
+*解析参数*
+
+`parse(process.argv)` 解析输入的参数, 如果不进行解析， action中不会传入参数。
+
+
 ```
 #!/usr/bin/env node
 
@@ -90,7 +100,6 @@ program.parse(process.argv)
 
 
 ```
-
 
 
 [源码](https://github.com/lirunkai/demo)
