@@ -31,7 +31,7 @@ console.log(process.argv)  // [nodejs路径， 文件路径， a, b=b, c, d]
 
 `process.env` 返回一个包含用户环境信息的对象, 可以对这个对象进行添加和删除, 注意添加后的属性会自动转成字符串
 
-`process.env.PWD` 返回当前目录的绝对路径
+`process.env.PWD` 返回package.json所在的项目根目录
 
 
 ```
