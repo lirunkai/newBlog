@@ -2,6 +2,10 @@
 
   * [编写一个cli](node/cli/home.md)
 
+  * [events](node/native/events.md)
+
+  * [stream](node/native/stream.md)
+
   * [process](node/native/process.md)
 
   * [child_process](node/native/child_process.md)
@@ -10,12 +14,20 @@
 
   * [path](node/native/path.md)
 
+  * [net](node/native/net.md)
+
+  * [http](node/native/http.md)
+
 * [javascript](js/README.md)
 
   * [声明](js/声明.md)
+
   * [内置类型](js/内置类型.md)
+
   * [this指向](js/this指向.md)
+
   * [Array](js/array.md)
+
   * [String](js/string.md)
 
 * [WebApi](webApi/README.md)
@@ -37,5 +49,7 @@
   * [简单的一些模式](computer/简单的一些模式.md)
 
   * [观察者模式](computer/观察者模式.md)
+
+  * [协议](computer/协议.md)
 
   * [一些名次](computer/notification.md)

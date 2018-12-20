@@ -17,7 +17,7 @@
 
 **创建**
 
-`child_process.exec(command, options, cb)`
+`child_process.exec(command, options, cb(error, stdout, stderr))`
 
 衍生一个shell并在shell中执行`command` 也就是执行某个命令
 
@@ -26,7 +26,7 @@
 2. `env`环境变量键值对
 3. `killSignal`父进程发送由 killSignal 属性标识的信号
 
-`child_process.execFile(file, args, options, cb)`
+`child_process.execFile(file, args, options, cb(error, stdout, stderr))`
 
 衍生一个新的进程执行file
 
@@ -78,9 +78,9 @@
 
 ### message事件
 
-子进程调用`process.send()`发送消息后, 会触发message
+子进程调用`process.send()`发送消息后, 会触发message。 一般在`childProcess.fork()`的文件中使用, 代表当前进程也就是子进程
 
-**childProcess.send(message)**
+**childProcess.send(message)**   只有拥有IPC通道的进程可以进行send方法交互
 
 ---
 

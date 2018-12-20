@@ -45,6 +45,8 @@ delete process.env.Lb  // 删除
 
 `process.ppid` 当前父进程的进程id
 
+`process.platform` 返回操作平台 `linux win32 darwin`
+
 
 
 
