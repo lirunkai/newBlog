@@ -38,6 +38,8 @@
 
   * [History](webApi/History.md)
 
+  * [PageLifecycle](webApi/PageLifecycle.md)
+
 * [有意思的js](algorithm/README.md)  
 
   * [排序算法](algorithm/home.md)
