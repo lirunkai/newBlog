@@ -34,6 +34,16 @@
 
 `document.onvisibilitychange`
 
+`document.visibilityState`的值
+
+ 1. `visible` 页面部分可见, 没有最小化
+
+ 2. `hidden` 用户不可见
+
+ 3. `prerender` 正在渲染
+
+ 4. `unloaded` 页面从内存中卸载清除
+
 ```
 // 获取Active Passive Hidden的状态
 docuemnt.visibilityState === hidden    //Hidden
