@@ -38,7 +38,7 @@
 
   * [History](webApi/History.md)
 
-  * [PageLifecycle](webApi/PageLifecycle.md)
+  * [PageLifecycle](webApi/PageLifycycle.md)
 
 * [有意思的js](algorithm/README.md)  
 
