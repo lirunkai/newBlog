@@ -40,6 +40,8 @@
 
   * [PageLifecycle](webApi/PageLifecycle.md)
 
+  * [IntersectionObserver](webApi/IntersectionObserver.md)
+
 * [有意思的js](algorithm/README.md)  
 
   * [排序算法](algorithm/home.md)
