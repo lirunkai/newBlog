@@ -180,3 +180,61 @@ mode `S_IRUSR` 所有者可读 `S_IWUSR` 所有者可写 `S_IXUSR` 所有者可�
 `fs.existsSync(path)`
 
 判断文件是否存在
+
+
+## 好用的npm包
+
+### fs-extra
+
+对原生`fs`进行再次封装, 支持promise, 支持async
+
+安装 `npm i fs-extra -D`
+
+**copy**   `fse.copy(src, dest, [option, callback])`
+
+`option`
+
+   1. `overwrite` *Boolean* 如果复制的目标位置已有同名文件, 则覆盖
+
+
+**emptyDir**   `fse.emptyDir(dir, cb)`
+
+确保某个dir是空的, 如果之前有这个dir, 则清空dir内部的文件，如果没有则创建
+
+**ensureFile** `fse.ensureFile(file, cb)`
+
+确保某个file是存在的. 如果不存在则创建, 存在不处理
+
+**ensureDir** `fse.ensureDir(dir, cb)`
+
+确保某个dir是存在的
+
+**ensureLink** `fse.ensureLink(srcPath, dstPath, cb)`
+
+确保链接是存在的
+
+**ensureSymlink** `fse.ensureSynlink(srcPath,dstPath, [type, cb])`
+
+**outputFile** `fse.outputFile(file, data, [option, cb])`
+
+将data写入文件,如果文件不存在则创建.
+
+**outputJSON** `fse.outputJSON(file, object, [option, cb])`
+
+将object写入一个json文件
+
+`options`
+
+    1. `spaces` json文件的缩进
+
+**readJSON** `fse.readJSON(file， cb(err,obj))`
+
+读取一个json的文件
+
+**pathExists**    `fse.pathExists(filepath, cb(exists))`
+
+查看文件是否存在, cb中的exists表示是否存在
+
+**remove** `fse.remove(path,cb)`
+
+### chokidar

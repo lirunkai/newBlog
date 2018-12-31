@@ -16,7 +16,9 @@
 
   * [net](node/native/net.md)
 
-  * [http](node/native/http.md)
+  * [http](node/native/http.md)  
+
+  * [npm](node/npm/npm.md)
 
 * [javascript](js/README.md)
 
@@ -29,6 +31,10 @@
   * [Array](js/array.md)
 
   * [String](js/string.md)
+
+  * [Promise](js/Promise.md)
+
+  * [Class](js/Class.md)
 
 * [WebApi](webApi/README.md)
 

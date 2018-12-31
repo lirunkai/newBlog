@@ -21,3 +21,11 @@
 ## ES6
 
 ES6 中，箭头函数中this值， 指向定义时所在的对象
+
+## class
+
+当一个对象调用静态或原型方法时，如果该对象没有“this”值, 那么this值在被调用的函数内部将为`undefined`
+
+因为所有的函数、方法、构造函数、getters或setters都在严格模式下执行. 因此如果我们没有指定this的值, this值将为`undefined`
+
+静态方法中的this, 表示当前类
