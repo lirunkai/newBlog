@@ -2,11 +2,11 @@
 
 浏览器第一次请求
 
-![](_media/first_request.png)
+![](http://aidoudou.top/_media/first_request.png)
 
 浏览器之后请求
 
-![](_media/second_request.png)
+![](http://aidoudou.top/_media/second_request.png)
 
 首先说说我们为什么要用缓存吧.
 
