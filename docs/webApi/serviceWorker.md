@@ -6,6 +6,8 @@ Service workers 本质上充当的角色是Web应用程序与浏览器之间的�
 
 采用JS控制关联的页面或者网站, 拦截并修改访问和资源请求，细粒度地缓存资源.
 
+在后台持续运行.....
+
 ### 注册
 
 `navigator.serviceWorker.register()` 返回一个promise
