@@ -50,6 +50,14 @@
 
   * [IntersectionObserver](webApi/IntersectionObserver.md)
 
+  * [Service worker](weApi/serviceWorker.md)
+
+  * [Cache](webApi/cache.md)
+
+* [chrome](chrome/README.md)
+
+  * [cache](chrome/cache.md)
+
 * [有意思的js](algorithm/README.md)  
 
   * [排序算法](algorithm/home.md)

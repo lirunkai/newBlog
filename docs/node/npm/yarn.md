@@ -36,4 +36,50 @@ yarn类似npm的一种方式
 
 ### 工作区
 
-在使用npm的过程中, 每个
+在使用npm的过程中, 每个项目都会根据自己的依赖生成自己的`node_modules`.
+
+比如使用工作区之前, 我们的结构是这样的
+
+```
+-- workDir
+
+  -- workDirA
+
+    -- node_modules
+
+    -- package.json
+
+  -- workDirB
+
+    -- node_modules
+
+    -- package.json
+
+```
+
+使用工作区之后
+
+```
+-- workDir
+
+  --node_modules
+
+  --package.json
+
+  -- workDirA
+
+    -- package.json
+
+  -- workDirB
+
+    -- package.json
+
+```
+
+#### 使用工作区
+
+在根目录下`yarn init`， 然后添加`private: true`到`package.json`内.
+
+添加工作区 添加`workspaces: ['workDirA', 'workDirB']`， 这里我们添加了两个工作区 `workDirA`， `workDirB`
+
+之后如果在`workDirA`或者`workDirB`里添加依赖 `yarn add package`, 不变的是`package.json`里的内容还会添加, 但是不在`workDirA`里生成`node_modules`了, 在根目录内生成了`node_modules`.
