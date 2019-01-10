@@ -56,7 +56,7 @@
 
 * [chrome](chrome/README.md)
 
-  * [cache](chrome/cache.md)
+  * [缓存](chrome/cache.md)
 
 * [有意思的js](algorithm/README.md)  
 
