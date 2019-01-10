@@ -2,11 +2,11 @@
 
 浏览器第一次请求
 
-![第一次请求](./_media/first_request.png)
+![](_media/first_request.png)
 
 浏览器之后请求
 
-![之后请求](./_media/second_request.png)
+![](_media/second_request.png)
 
 首先说说我们为什么要用缓存吧.
 
