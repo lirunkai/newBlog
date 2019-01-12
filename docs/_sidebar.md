@@ -34,6 +34,8 @@
 
   * [String](js/string.md)
 
+  * [Object](js/Object.md)
+
   * [Promise](js/Promise.md)
 
   * [Class](js/Class.md)
@@ -57,6 +59,8 @@
 * [chrome](chrome/README.md)
 
   * [缓存](chrome/cache.md)
+
+  * [性能优化](chrome/performance.md)
 
 * [有意思的js](algorithm/README.md)  
 
