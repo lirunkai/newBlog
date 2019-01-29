@@ -55,4 +55,6 @@ CRP `Critical Rendering Path` 关键路径渲染
 
 ## Preconnect
 
-## cache
+
+
+## 减少静态资源请求量
