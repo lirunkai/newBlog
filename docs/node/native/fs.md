@@ -90,8 +90,8 @@ fs.ReadStream是可读流   `fs.createReadStream(path, options{flags, encoding, 
 异步将src复制到dest。
 
 flags   `fs.constants.COPYFILE_EXCL` 如果 dest 已存在，则拷贝失败
-        `fs.constants.COPYFILE_FICLONE` 拷贝时会创建写时拷贝
-        `fs.constants.COPYFILE_FICLONE_FORCE` 拷贝时会创建写时拷贝链接
+​        `fs.constants.COPYFILE_FICLONE` 拷贝时会创建写时拷贝
+​        `fs.constants.COPYFILE_FICLONE_FORCE` 拷贝时会创建写时拷贝链接
 
 ## 读
 
@@ -162,19 +162,19 @@ fs.access(path, fs.constants.R_OK | fs.constants.W_OK, (err) => {
 mode `S_IRUSR` 所有者可读 `S_IWUSR` 所有者可写 `S_IXUSR` 所有者可执行
 
      `S_IRGRP` 群组可读   `S_IWGRP` 群组可写   `S_IXGRP` 群组可执行
-
+    
      `S_IROTH` 其他人可读  `S_IWOTH` 其他人可写 `S_IXOTH` 其他人可执行
 
 这个记着比较麻烦， 可以记一个数字的顺序 765 7最左侧的数字代表文件所有者的权限， 中间的数字代表群组的权限, 最右侧的数字代表其他人的权限
 
 从7到0, 权限        7 可读 可写 可执行
-                   6 可读 可写
-                   5 可读 可执行
-                   4 只读
-                   3 可写 可执行
-                   2 只写
-                   1 只可执行
-                   0 没权限
+​                   6 可读 可写
+​                   5 可读 可执行
+​                   4 只读
+​                   3 可写 可执行
+​                   2 只写
+​                   1 只可执行
+​                   0 没权限
 ## 判断
 
 `fs.existsSync(path)`

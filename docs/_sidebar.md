@@ -15,6 +15,8 @@
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
   * [dayjs](node/npm/dayjs.md)
+  * [lerna](node/npm/lerna.md)
+  * [semver](node/npm/semver.md)
 * [javascript](js/README.md)
 
   * [声明](js/声明.md)

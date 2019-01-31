@@ -76,6 +76,8 @@
 
 `npm version major` 更新一个大的版本 `eg v1.0.0 => v2.0.0`
 
+`npm version minor` 升级小版本号 `eg v1.0.0 => v1.1.0`
+
 
 
 ### 测试自己的包

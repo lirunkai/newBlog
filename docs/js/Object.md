@@ -30,7 +30,6 @@
 
 `Object.setPrototypeOf(obj, prototype)` 设置对象的原型
 
-
 -------------
 
 `Object.defineProperty(obj, prop, descriptor)`
@@ -51,4 +50,9 @@
 
   6. `value` 属性对应的值 默认是 undefined
 
-  ----------------
+----------------
+
+`Object.is(n1, n2)` 判断两个值是否相同
+
+​	和`===`不同的是，可以判断`-0 +0`, `NaN`
+
