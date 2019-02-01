@@ -20,22 +20,16 @@
 * [javascript](js/README.md)
 
   * [声明](js/声明.md)
-
   * [内置类型](js/内置类型.md)
-
   * [this指向](js/this指向.md)
-
   * [Array](js/array.md)
-
   * [String](js/string.md)
-
   * [Object](js/Object.md)
-
+  * [RegExp](js/RegExp.md)
   * [Promise](js/Promise.md)
-
   * [Class](js/Class.md)
+  * [Set](js/set.md)
 * [WebApi](webApi/README.md)
-
   * [全屏](webApi/fullscreen.md)
 
   * [MutationObserver](webApi/MutationObserver.md)

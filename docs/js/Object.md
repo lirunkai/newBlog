@@ -6,6 +6,19 @@
 
 属于浅拷贝
 
+无法复制深层属性, 比如
+
+```javascript
+Object.assign({url: {'a': "v"}}, {url: {'b': 'd'}})
+// {url: {b: "d"}}
+// 可以使用lodash
+_.defaultsDeep(object, source)
+_.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'age': 36 } });
+// { 'user': { 'name': 'barney', 'age': 36 } }
+```
+
+
+
 `Object.create(prototype, propertiesObject)` 创建一个对象
 
 `Object.freeze(obj)`    冻结一个对象， 不能添加， 修改， 删除属性.

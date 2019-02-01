@@ -32,9 +32,15 @@
 
 `str.trim()`
 
-`str.toLowerCase()`
+`str.toLowerCase()` 将所有字母进行小写转换
 
-`str.toUpperCase()`
+|  lodash    _.lowerFirst(string) 将首字母进行小写，返回转换后的字符串
+
+`str.toUpperCase()`    将所有字母进行大写转换
+
+| lodash   _.upperFirst(string)  将首字母大写, 返回转换后的字符串
+
+|  lodash  _.capitalize(string)  首字母大写, 其他字母小写, 返回转换后的字符串
 
 ### 无索引
 
