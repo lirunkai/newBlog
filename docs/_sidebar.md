@@ -1,5 +1,4 @@
-* [nodejs](node/README.md)
-
+* nodejs
   * [编写一个cli](node/cli/home.md)
   * [events](node/native/events.md)
   * [stream](node/native/stream.md)
@@ -11,13 +10,15 @@
   * [http](node/native/http.md)  
   * [npm](node/npm/npm.md)
   * [yarn](node/npm/yarn.md)
+
 * npm包
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
   * [dayjs](node/npm/dayjs.md)
   * [lerna](node/npm/lerna.md)
   * [semver](node/npm/semver.md)
-* [javascript](js/README.md)
+
+* javascript
 
   * [声明](js/声明.md)
   * [内置类型](js/内置类型.md)
@@ -29,7 +30,8 @@
   * [Promise](js/Promise.md)
   * [Class](js/Class.md)
   * [Set](js/set.md)
-* [WebApi](webApi/README.md)
+
+* WebApi
   * [全屏](webApi/fullscreen.md)
 
   * [MutationObserver](webApi/MutationObserver.md)
@@ -43,14 +45,17 @@
   * [Service worker](weApi/serviceWorker.md)
 
   * [Cache](webApi/cache.md)
-* [chrome](chrome/README.md)
+
+* chrome
 
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
   * [安全](chrome/safety.md)
-* [有意思的js](algorithm/README.md)  
+
+* 有意思的js
   * [排序算法](algorithm/home.md)
-* [计算机](computer/README.md)
+
+* 计算机
   * [策略模式和状态模式](computer/策略模式&状态模式.md)
 
   * [简单的一些模式](computer/简单的一些模式.md)
