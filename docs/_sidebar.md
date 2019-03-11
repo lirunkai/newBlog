@@ -24,6 +24,7 @@
 
   * [声明](js/声明.md)
   * [内置类型](js/内置类型.md)
+  * [事件](js/EventLoop.md)
   * [this指向](js/this指向.md)
   * [Array](js/array.md)
   * [String](js/string.md)
@@ -32,6 +33,7 @@
   * [Promise](js/Promise.md)
   * [Class](js/Class.md)
   * [Set](js/set.md)
+  * [函数](js/函数.md)
 
 * WebApi
 

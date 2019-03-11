@@ -1,4 +1,4 @@
-# EventLoop
+## EventLoop
 
 说到EventLoop就要说下js是单线程的，为了实现主进程不堵塞， 才有了EventLoop这种解决方案
 
@@ -8,11 +8,11 @@
 
 **异步任务**
 
-**宏任务**(macroTask)
+**宏任务**(macroTask / task)
 
 `setTimeout` `setInterval` `setImmediate` `I/O` `UI rendering`
 
-**微任务**(microTask)
+**微任务**(microTask / jobs)
 
 `Promise.then` `process.nextTick`
 
@@ -21,7 +21,6 @@
 也就是 `同步任务 微任务 宏任务` 重复
 
 | 注意:
-|
 | 在每一次事件循环中，macrotask 只会提取一个执行，而 microtask 会一直提取，直到 microtasks 队列清空
 
 ```
@@ -54,3 +53,38 @@ new Promise((re, rj) => {
 console.log(3);
 // 12345678
 ```
+
+### 事件机制
+
+事件传播的三个阶段 **捕获 ** **冒泡** **抵达当前触发事件的元素**
+
+#### 事件的注册
+
+`EventTarget.addEventListener(eventType, listener, [options])`
+
+`options`
+
+1. `options.capture`  表示 `listener` 会在该类型的事件捕获阶段传播到该 `EventTarget` 时触发。
+2. `options.once` 表示`listener`在添加之后最多调用一次
+3. `options.passive` 表示 `listener` 永远不会调用 `preventDefault()。`
+
+`EventTarget.addEventListener(eventType, listener, [useCapture])`
+
+`useCapture`决定了事件的传播方式`  true时, 父级优先于子集元素接受事件.
+
+#### 取消事件的监听
+
+`removeEventListener(eventType, listener)`
+
+#### 取消冒泡
+
+`event.stopPropagation()`  取消冒泡，只会让当前事件处理程序运行，但事件不会在**冒泡**链上进一步扩大，
+
+### 事件委托
+
+想要在大量子元素中单击任何一个都可以运行一段代码，您可以将事件监听器设置在其父节点上，并将事件监听器气泡的影响设置为每个子节点，而不是每个子节点单独设置事件监听器
+
+#### 阻止事件的默认行为
+
+`event.preventDefault()`  有些按钮上有一些浏览器注册的特性, 比如`input(type="submit")` 会进行表单的提交, 通过`event.preventDefault()`可以阻止这一默认行为.
+
