@@ -87,4 +87,3 @@ console.log(3);
 #### 阻止事件的默认行为
 
 `event.preventDefault()`  有些按钮上有一些浏览器注册的特性, 比如`input(type="submit")` 会进行表单的提交, 通过`event.preventDefault()`可以阻止这一默认行为.
-

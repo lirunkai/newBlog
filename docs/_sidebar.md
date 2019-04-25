@@ -38,37 +38,32 @@
 * WebApi
 
   * [全屏](webApi/fullscreen.md)
-
   * [MutationObserver](webApi/MutationObserver.md)
-
   * [History](webApi/History.md)
-
   * [PageLifecycle](webApi/PageLifecycle.md)
-
   * [IntersectionObserver](webApi/IntersectionObserver.md)
-
   * [Service worker](weApi/serviceWorker.md)
+  * [Cache](webApi/cache.md)  
 
-  * [Cache](webApi/cache.md)
-
-* chrome
+* 优化
 
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
   * [安全](chrome/safety.md)
 
-* 有意思的js
+* 算法
 
   * [排序算法](algorithm/home.md)
+  * [字符串算法1](algorithm/字符串相关算法一.md)
 
 * 计算机
 
   * [策略模式和状态模式](computer/策略模式&状态模式.md)
-
   * [简单的一些模式](computer/简单的一些模式.md)
-
   * [观察者模式](computer/观察者模式.md)
-
-  * [协议](computer/协议.md)
-
+  * [网络](computer/网络.md)
   * [一些名次](computer/notification.md)
+
+* 基础
+
+  * [BFC](css/BFC.md)

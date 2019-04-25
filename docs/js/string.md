@@ -30,6 +30,10 @@
 
 提取从start到end的字符串, 不包含end， `如果任一参数小于 0 或为 NaN，则被当作 0` `如果 indexStart 大于 indexEnd, start和end对换提取`
 
+`str.substr(start, length)`
+
+提取从`start`开始的指定数目的字符
+
 `str.trim()`
 
 `str.toLowerCase()` 将所有字母进行小写转换

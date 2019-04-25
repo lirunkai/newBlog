@@ -2,13 +2,13 @@
 
 #### main 主要内容
 
-#### article
+#### article 
 
-#### aside
+#### aside 单独的一块区域
 
-#### section
+#### section 
 
-#### header
+#### header 头部
 
-#### footer
+#### footer 尾部
 
