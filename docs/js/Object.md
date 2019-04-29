@@ -4,7 +4,7 @@
 
 对象指的是类的实例。它将对象作为程序的基本单元，将程序和数据封装其中，以提高软件的重用性、灵活性和扩展性，对象里的程序可以访问及经常修改对象相关连的数据.
 
-### Object
+## Object
 
 `Object.assign(target, sources)`
 
@@ -22,7 +22,6 @@ _.defaultsDeep(object, source)
 _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'age': 36 } });
 // { 'user': { 'name': 'barney', 'age': 36 } }
 ```
-
 
 
 `Object.create(prototype, propertiesObject)` 创建一个对象
@@ -75,3 +74,4 @@ _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'ag
 
 ​	和`===`不同的是，可以判断`-0 +0`, `NaN`
 
+----------------

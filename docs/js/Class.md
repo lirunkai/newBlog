@@ -16,9 +16,9 @@
 
 ## super
 
- 1. 作为对象, 代表父类的原型对象 `super.someFn()`, 通过`super `调用父类的方法时, super会绑定子类的this值`
-
- 2. `constructor`中调用`super()`来获取this值, 子类本身没有自己的this， `super`方法执行后生成子类自己的this
+  1. 作为对象, 在普通函数中,代表父类的原型对象 `super.someFn()`, 通过`super `调用父类的方法时, super会绑定子类的this值`, 在静态方法中,指向父类.
+  2. `constructor`中调用`super()`来获取this值, 子类本身没有自己的this， `super`方法执行后生成子类自己的this
+  3. 
 
 ## static
 
@@ -26,7 +26,7 @@
 
 静态方法不能通过实例调用.  通过类直接调用
 
-静态方法中的this, 表示 **当前类**
+静态方法中的this, 表示 **当前类**, 而不是实例
 
 ## extends
 

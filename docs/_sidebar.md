@@ -42,8 +42,10 @@
   * [History](webApi/History.md)
   * [PageLifecycle](webApi/PageLifecycle.md)
   * [IntersectionObserver](webApi/IntersectionObserver.md)
-  * [Service worker](weApi/serviceWorker.md)
+  * [webWorker](weApi/webWorker.md)
   * [Cache](webApi/cache.md)  
+  * [文件相关API](webApi/文件相关API.md)
+  * [网络相关API](webApi/网络相关Api.md)
 
 * 优化
 
@@ -64,6 +66,6 @@
   * [网络](computer/网络.md)
   * [一些名次](computer/notification.md)
 
-* 基础
+* 前端基础
 
   * [BFC](css/BFC.md)

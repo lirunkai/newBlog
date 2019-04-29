@@ -6,17 +6,27 @@
 
 ## 可拦截的
 
-拦截**属性**的读取  `handler.get(target, propKey)`
+**get** 拦截属性的读取  `handler.get(target, propKey, receiver)`
 
-拦截**属性**的设置, 返回一个布尔值  `handler.set(target, propKey, value)`
+**set** 拦截属性的设置, 返回一个布尔值  `handler.set(target, propKey, value, receiver)`
 
-拦截**in**操作， 返回一个布尔值 `handler.has(target,propKey)`
+**apply** 拦截函数的调用, call和apply操作 `handler.apply(target, ctx, args)`
 
-拦截**delete**操作, 返回一个布尔值 `handler.deleteProperty(target, propKey)`
+**has** 拦截HasProperty操作,比如`in Reflect.has()`， 返回一个布尔值 `handler.has(target,propKey)`
 
-拦截**getOwnPropertyDescriptor**操作,返回属性的描述对象。 `handler.getOwnPropertyDescriptor(target, propKey)`
+**construct** 拦截new操作, 返回的必须是一个对象，否则会报错 `handler.construct(target, args, newTarget)`
 
-拦截**defineProperty**操作 `handler.defineProperty(target, propKey, propDesc)`
+**deleteProperty** 拦截delete操作, 返回一个布尔值 `handler.deleteProperty(target, propKey)`
+
+**getOwnPropertyDescriptor** 拦截`Object.getOwnPropertyDescriptor`操作,返回属性的描述对象。 `handler.getOwnPropertyDescriptor(target, propKey)`
+
+**defineProperty** 拦截`Object.defineProperty`操作 `handler.defineProperty(target, propKey, propDesc)`
+
+**getPrototypeOf** 拦截获取对象原型， 返回值必须是对象或者null
+
+**setPrototypeOf** 拦截`Object.setPrototypeOf`
+
+**ownKeys** 拦截对象自身属性的读取
 
 
 ## 拦截后
@@ -43,3 +53,7 @@ let proxy = new Proxy(obj, handler)
 
 proxy._a = 2
 ```
+
+## Proxy.revocable(target, handler)
+
+返回一个对象`{proxy, revoke}`， proxy是Proxy实例, revoke是可取消Proxy的函数, 取消后再访问Proxy实例会报错

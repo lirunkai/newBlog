@@ -49,8 +49,15 @@ function tribonacci(signature,n){
   }
   return signature.slice(0, n); //return trib - length of n
 }
-
 ```
+
+`flat(num)`
+
+降num个维度, 如果需要将不知道多少个维度的数组转成一维数组`arr.flat(Infinity)`
+
+`flatMap(fn)`
+
+先循环数组,之后调用flat
 
 ## 修改原数组
 
@@ -108,9 +115,9 @@ function tribonacci(signature,n){
 
 查到item在数组中的索引, 没有返回-1
 
-`includes(item)`
+`includes(item, [start])`
 
-查询数组中是否包含item, 返回true或者false
+查询数组中是否包含item, 返回true或者false, start参数代表从哪里开始查询
 
 ## 其他类型
 
