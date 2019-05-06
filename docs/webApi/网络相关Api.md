@@ -271,5 +271,43 @@ SYN-ACK 重传次数: 服务器发送完SYN-ACK包之后,如果未收到客户�
 
 > **FIN** （finish）结束
 
+### 跨域
+
+跨域只是在浏览器中存在的行为, 服务器端不存在跨域
+
+**浏览器的同源安全策略**
+
+协议, 域名或者端口有一个不同就是跨域. 请求就会失败.
+
+解决: 
+
+**CORS(Cross-Origin Resource Sharing，跨域资源共享)**
+
+由一系列的请求头组成, 这些请求头决定浏览器是否阻止前端js获取跨域请求的响应
+
+`Access-Control-Allow-Origin`  指示请求的资源能共享给哪些域。
+
+`Access-Control-Allow-Headers` 用在对预请求的响应中，指示实际的请求中可以使用哪些 HTTP 头。
+
+`Access-Control-Allow-Credentials` 指示当请求的凭证标记为 true 时，是否响应该请求
+
+`Access-Control-Allow-Methods` 指定对预请求的响应中，哪些 HTTP 方法允许访问请求的资源。
+
+`Access-Control-Expose-Headers` 指示哪些 HTTP 头的名称能在响应中列出。
+
+`Access-Control-Max-Age` 预请求的结果能缓存多久
+
+`Access-Control-Request-Headers` 用于发起一个预请求，告知服务器正式请求会使用那些 HTTP 头。
+
+`Access-Control-Request-Method` 用于发起一个预请求，告知服务器正式请求会使用哪一种 HTTP 请求方法
+
+主要是后端来实现
+
+**document.domain**
+
+用于二级域名相同的情况下, 比如`a.aidoudou.com.cn`和`b.aidoudou.com.cn`
+
+`document.domain='aidoudou.com.cn'`
+
 
 
