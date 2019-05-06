@@ -43,6 +43,7 @@
   * [Cache](webApi/cache.md)  
   * [文件相关API](webApi/文件相关API.md)
   * [网络相关API](webApi/网络相关Api.md)
+  * [DOM](webApi/DOM.md)
 * 优化
 
   * [缓存](chrome/cache.md)

@@ -4,7 +4,7 @@ Web安全的三个目标: 机密性， 完整性, 可用性。
 
 机密性:  在未验证状态下信息不能被用户获取。
 
-完整性： 完整性表示，	经过验证的用户访问数据时，数据没有发生过任何改动，是原生的数据。
+完整性： 完整性表示，经过验证的用户访问数据时，数据没有发生过任何改动，是原生的数据。
 
 可用性: 可用性指被验证过的用户可以轻易获得信息
 
@@ -48,5 +48,9 @@ Cross-Site Scripting 跨站脚本攻击,  是一种代码注入攻击. 通过注
 
 原理： 通过验证获取文件的哈希值是否与提供的哈希值一样来判断资源是否被篡改
 
-`<script href="" integrity="sha256"></script>`
+使用：`<script href="" integrity="sha256"></script>`
+
+使用 base64 编码过后的文件哈希值写入你所引用的 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/script) 或 [``](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/link) 标签的 **integrity**属性值中即可启用子资源完整性功能。
+
+integrity 值分成两个部分，第一部分指定哈希值的生成算法（目前支持 sha256、sha384 及 sha512），第二部分是经过 base64 编码的实际哈希值，两者之间通过一个短横（-）分割。
 

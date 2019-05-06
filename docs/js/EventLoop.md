@@ -60,7 +60,7 @@ console.log(3);
 
 #### 事件的注册
 
-`EventTarget.addEventListener(eventType, listener, [options])`
+`target.addEventListener(eventType, listener, [options])`
 
 `options`
 
@@ -68,13 +68,20 @@ console.log(3);
 2. `options.once` 表示`listener`在添加之后最多调用一次
 3. `options.passive` 表示 `listener` 永远不会调用 `preventDefault()。`
 
-`EventTarget.addEventListener(eventType, listener, [useCapture])`
+`target.addEventListener(eventType, listener, [useCapture])`
 
 `useCapture`决定了事件的传播方式`  true时, 父级优先于子集元素接受事件.
 
 #### 取消事件的监听
 
 `removeEventListener(eventType, listener)`
+
+#### 事件派发
+
+`target.dispatchEvent(event)` 
+
++ event 是要被派发的事件对象
++ target 被用来初始化事件和决定将会触发目标
 
 #### 取消冒泡
 

@@ -175,7 +175,45 @@ let ajax = new XMLHttpRequest()
 
 包含若干静态方法的对象，用来创建 URLs
 
+属性
 
+`URL.href` 完整 URL的`DOMString`
+
+`URL.protocol` 协议名
+
+`URL.host` 域名和端口号
+
+`URL.hostname` 域名
+
+`URL.port` 端口号
+
+`URL.origin` 协议名, 域名和端口号
+
+`URL.pathname` 文件路径
+
+`URL.search` ？号开头的请求参数
+
+`URL.hash` #号开头的
+
+`URL.searchParams`  访问当前URL的请求参数对象(URLSearchParams)
+
+方法
+
+`URL.createObjectURL(blob)`  创建一个新的 URL 对象
+
+`URL.revokeObjectURL()` 释放`createObjectURL`创建的URL对象
+
+
+
+## Location
+
+继承自URLUtils
+
+`location.reload(Boolean)` 重新加载来自当前 URL的资源, 为true时会导致该方法引发的刷新一定会从服务器上加载数据
+
+`location.assign()` 加载给定URL的内容资源到这个Location对象所关联的对象上
+
+`location.replace()` 用给定的URL替换掉当前的资源, 使用`replace`不会留记录
 
 +++
 
