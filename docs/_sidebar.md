@@ -65,4 +65,7 @@
   * [BFC](css/BFC.md)
 * 框架
   * [react](mvvm/react.md)
+* 自动化
+  * [CI/CD](mode/CICD.md)
+  * [webpack](mode/webpack.md)
 

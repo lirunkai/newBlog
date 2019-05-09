@@ -22,6 +22,14 @@ webpack是一个现代js的静态文件打包工具，当webpack处理程序时,
 
 **rules**
 
+use
+
+option
+
+loader
+
+loader是用来加载处理各种形式的资源,本质上是一个函数, 接受文件作为参数,返回转化后的结构。
+
 ##  mode
 
 模式， 指明现在是`development`开发模式还是`production`生产模式。

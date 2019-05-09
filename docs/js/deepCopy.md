@@ -4,7 +4,7 @@
 
 ## 深拷贝实现
 
-1. JSON
+1. JSON.parse
 
 ```
 let newObj = JSON.parse(JSON.stringify(obj))
@@ -12,7 +12,7 @@ let newObj = JSON.parse(JSON.stringify(obj))
 
 2. js
 
-```
+```javascript
 function clone (value) {
   if (Array.isArray(value)) {
     return value.map(clone)
@@ -27,3 +27,5 @@ function clone (value) {
   }
 }
 ```
+
+3. `lodash`
