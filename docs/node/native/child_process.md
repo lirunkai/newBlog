@@ -3,6 +3,7 @@
 之前说了进程`process`， 现在说说和它相关的子进程`child_process`, 平时代码或者工具开发中, 在主进程启动后, 还有一些任务需要单独执行, 这时我们就需要使用`child_process`
 
 **子进程的使用大概分为**:
+
 1. 执行某个命令
 2. 执行某个文件
 
@@ -19,7 +20,7 @@
 
 `child_process.exec(command, options, cb(error, stdout, stderr))`
 
-衍生一个shell并在shell中执行`command` 也就是执行某个命令
+衍生一个shell并在shell中执行`command` 也就是执行某个命令,  `command`命令的参数, 以空格分割
 
 通常使用`options`中的,  `options`用于自定义如何衍生进程
 1. `cwd`子进程运行的工作目录
