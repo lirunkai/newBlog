@@ -52,3 +52,9 @@ export default {
 
 需要对普通 DOM 元素进行底层操作，这时候就会用到自定义指令
 
+
+
+### 高阶组件
+
+`transition`和`keep-alive`
+

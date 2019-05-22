@@ -74,4 +74,3 @@ _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'ag
 
 ​	和`===`不同的是，可以判断`-0 +0`, `NaN`
 
-----------------

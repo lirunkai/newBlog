@@ -88,3 +88,29 @@ function incrementString(input) {
 }
 ```
 
+---
+
+
+
+## **命名捕获组**
+
+在`()`前面使用`?<name>`标识
+
+```javascript
+const reDate = /(?<year>[0-9]{4})-(?<month>[0-9]{2})/
+let match = reDate.exec('2018-09')
+console.log(match.groups.year)
+console.log(match.groups.month)
+```
+
+所有的命中组的匹配结果, 可以在结果对象的`groups`属性中获得
+
+*在replace*中的使用
+
+```javascript
+const
+  reDate = /(?<year>[0-9]{4})-(?<month>[0-9]{2})/,
+  d      = '2018-04-30',
+  usDate = d.replace(reDate, '$<month>-$<year>');
+```
+

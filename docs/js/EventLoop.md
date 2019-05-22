@@ -20,10 +20,11 @@
 
 也就是 `同步任务 微任务 宏任务` 重复
 
-| 注意:
-| 在每一次事件循环中，macrotask 只会提取一个执行，而 microtask 会一直提取，直到 microtasks 队列清空
+> 注意:
+>
+> 在每一次事件循环中，macrotask 只会提取一个执行，而 microtask 会一直提取，直到 microtasks 队列清空
 
-```
+```javascript
 console.log(1);
 
 setTimeout(function() {
@@ -53,6 +54,23 @@ new Promise((re, rj) => {
 console.log(3);
 // 12345678
 ```
+
+> setTimeout的延迟执行时间不得小于1ms, 如果小于1ms, 设置为1毫秒
+>
+> ```c++
+> repeat *= 1; // coalesce to number or NaN
+> 	  if (!(repeat >= 1 && repeat <= TIMEOUT_MAX))
+> 		repeat = 1; // schedule on next tick, follows browser behavior
+> 	
+> 	  var timer = new Timeout(repeat, callback, args);
+> 	  timer._repeat = repeat;
+> 	  if (process.domain)
+> 		timer.domain = process.domain;
+> 	
+> 	  active(timer);
+> 	
+> 	  return timer;
+> ```
 
 ### 事件机制
 
