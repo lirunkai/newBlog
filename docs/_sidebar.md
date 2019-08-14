@@ -1,5 +1,4 @@
 * nodejs
-
   * [command line](node/commandLine.md)
   * [events](node/native/events.md)
   * [stream](node/native/stream.md)
@@ -11,6 +10,7 @@
   * [http](node/native/http.md)  
   * [npm](node/npm/npm.md)
   * [yarn](node/npm/yarn.md)
+
 * npm包
 
   * [minimist](node/npm/minimist.md)
@@ -18,8 +18,8 @@
   * [dayjs](node/npm/dayjs.md)
   * [lerna](node/npm/lerna.md)
   * [semver](node/npm/semver.md)
-* javascript
 
+* javascript
   * [声明](js/声明.md)
   * [内置类型](js/内置类型.md)
   * [事件](js/EventLoop.md)
@@ -32,8 +32,8 @@
   * [Class](js/Class.md)
   * [Set](js/set.md)
   * [函数](js/函数.md)
-* WebApi
 
+* WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)
   * [History](webApi/History.md)
@@ -44,17 +44,18 @@
   * [文件相关API](webApi/文件相关API.md)
   * [网络相关API](webApi/网络相关Api.md)
   * [DOM](webApi/DOM.md)
-* 优化
 
+* 优化
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
   * [安全](chrome/safety.md)
+
 * 算法
   * [数据结构](algorithm/数据结构.md)
   * [排序算法](algorithm/home.md)
   * [字符串算法1](algorithm/字符串相关算法一.md)
-* 计算机
 
+* 计算机
   * [策略模式和状态模式](computer/策略模式&状态模式.md)
   * [简单的一些模式](computer/简单的一些模式.md)
   * [观察者模式](computer/观察者模式.md)
