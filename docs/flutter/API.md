@@ -1,3 +1,5 @@
+
+
 Flutter
 
 记录下flutter的使用方式，以及一些默认规则.
@@ -84,6 +86,21 @@ child:Text(
 )
 ```
 
+### TextSpan
+
+如果需要对一个Text内容的不同部分按照不同的样式展示, 需要使用TextSpan
+
+```dart
+const TextSpan({
+	TextStyle style,
+  String text,
+  List<TextSpan> children,
+  GestureRecognizer recognizer
+})
+```
+
+
+
 ### Container
 
 **alignment**  针对`Container`中的`child`的对齐方式
@@ -146,4 +163,121 @@ MaterialPageRoute({
 
 ## 路由表
 
-要想使用命名路由
+要想使用命名路由,得先注册一个路由表
+
+```dart
+return new MaterialApp(
+	title: 'Flutter demo',
+	theme: new Theme(
+		primarySwatch: Colors.blue
+	),		
+  routes: {
+    'name': (context) => NewRoute()
+  },
+  home: new MyHomePage()
+)
+```
+
+通过路由名称打开新路由页
+
+`pushNamed(BuildContext context, String routeName, {Object arguments})`
+
+`Navigator.pushNamed(context, 'name')`
+
+带参数
+
+`Navigator.of(context).pushNamed('name', arguments: 123)`
+
+获取参数
+
+`ModalRoute.of(context).settings.arguments`
+
+## 包管理
+
+通过使用配置文件`pubspec.yaml`来管理第三方依赖包
+
+```yaml
+dependencies:
+	flutter:
+		sdk: flutter
+	cupertino_icons: ^0.1.0	
+dev_dependencies:
+	english_words: ^3.1.3
+```
+
+本地包
+
+```yaml
+dependencies:
+	pkg1: 
+		path: ../../code/pkg1
+	pkg2:
+  	git:
+  		url: git://github.com/xxx/pkg1.git
+```
+
+### 关于资源
+
+同样是使用`pubspec.yaml`来管理
+
+```yaml
+flutter:
+	assets: 
+		- assets/my_icon.png
+		_ assets/background.png
+```
+
+#### 加载assets
+
+**加载文本assets** 通过`rootBundle`对象加载, `rootBundle`可以访问主资源包
+
+```dart
+import 'dart:async' show Future;
+import 'package:flutter/services.dart' show rootBundle;
+Future<String> loadAsset() async{
+	return await rootBundle.loadString('assets/config.json');
+}
+```
+
+`DefaultAssetBundle` 使用`DefaultAssetBundle`来获取当前`BuildContext`的`AssetBundle`。
+
+#### 加载图片
+
+`AssetImage` 可以将asset的请求逻辑映射到最接近当前设备像素比例（dpi）的asset. 为了使这种映射起作用, 必须根据特定的目录结构来保存asset
+
+```
+.../image.png
+.../2.0x/image.png
+.../3.0x/image.png
+```
+
+```dart
+Widget build(BuildContext context) {
+	return new DecoratedBox(
+  	decoration: new BoxDecoration(
+      	image: new DecotationImage(
+        	image: new AssetImage('graphics/background.png')
+        )
+    )
+  )
+}
+```
+
+
+
+`flutter packages get`
+
+`flutter run`
+
+`flutter doctor`
+
+`flutter upgrade`
+
+
+
+
+
+
+
+
+

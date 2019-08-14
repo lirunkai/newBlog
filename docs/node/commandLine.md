@@ -1,6 +1,6 @@
 # 编写个自己的cli
 
-我们经常在命令行里面看到一些自定义的命令, 比如`vue create name` 或者 `ng init`， 这里的 `vue` `ng`就是自定义的命令。
+我们经常在命令行里面看到一些自定义的命令, 比如`vue create name` 或者 `ng init`， 这里的 `vue` `ng`就是自定义的命令
 
 ## 最简单的可执行脚本
 
@@ -10,8 +10,9 @@
 #!/usr/bin/env node
 console.log('hello big boy')
 ```
+## 自定义命令的name
 
-在`package.json`里面添加`bin`字段
+在`package.json`里面添加`bin`字段, 来定义脚本的名称, 比如下面自定义了一个`big`的命令以及调用`big`时需要执行的文件
 
 ```
 bin:{

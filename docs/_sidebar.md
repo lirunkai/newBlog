@@ -1,6 +1,6 @@
 * nodejs
 
-  * [编写一个cli](node/cli/home.md)
+  * [command line](node/commandLine.md)
   * [events](node/native/events.md)
   * [stream](node/native/stream.md)
   * [process](node/native/process.md)
