@@ -4,6 +4,8 @@
 
 **JSX**
 
+javascript和xml结合的一种表达。 解析到`<>`当做HTML解析,`{}`当做js解析 个人理解`{}` 里面就是js语句
+
 属性： 
 
    	1. 使用引号来定义字符串为值的属性
@@ -175,7 +177,126 @@ function loginControl(){
 
 ### Hooks
 
-`import React, {useState} from 'react'` 
+### useState
+
+useState 返回了一个state，以及更新state的函数
+
+```react
+const [state, setState] = useState(initialState);
+```
+
+`initialState`  只在组件初始渲染时起作用
+
+1. 不需要特殊计算， 直接写值。比如`useState(3)`
+2. 需要特殊计算, `initialState`是一个函数, 在函数内计算并返回初始的state
+
+`setState`的传值
+
+1. 不需要依赖之前的state, 直接传值，将state修改。
+2. 需要依赖之前的state, 传一个函数, 函数的参数是之前的state, 并返回一个更新后的值
+
+**注意** `useState`不可以在条件语句中使用
+
+```react
+import React, {useState} from 'react'
+function Welcome () {
+	// useState的使用
+	const [name, setName] = useState('lnb')
+	return (
+    <div>
+      <h2>Welcome {name}</h2>
+      <input onChange={(e) => setCount(e.target.value)}></input>
+    </div>
+	)
+}
+```
+
+### useEffect(didUpdate)
+
+使用 `useEffect` 完成副作用（订阅,  设置定时器）操作.  赋值给`useEffect`的函数会在组件渲染到屏幕之后执行。 如果执行了有副作用操作, 需要返回一个函数来清除effect.
+
+在每次state修改时会再次调用。
+
+第二个参数可以控制effect的调用。
+
+```react
+// count修改时调用
+useEffect(() => {
+  
+}, [count])
+
+// 只调用一次
+useEffect(() => {
+  
+}, [])
+```
+
+`useEffect` 通过返回一个函数来清除影响
+
+### useContext
+
+```react
+const value = useContext(MyContext)
+```
+
+接收一个context对象(React.createContext的返回值) 并返回该context的当前值。 当前的context值由上层组件中距离当前组件最近的`<MyContext.Provider>`的`value`prop决定
+
+当巨剑上层最近的`<MyContent.Provider>`更新时, 该Hook会触发重新渲染, 并使用最新传递给`MyContext`provider的context `value`值
+
+### useReducer
+
+```react
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+```
+
+接收一个形如`(state, action) => newState`的reducer， 并返回当前state以及与其配套的dispatch方法.
+
+```react
+const initialState = {count: 0}
+function reducer (state, action) {
+  switch(action.type){
+    case 'increment':
+      	return {count: state.count + 1}
+    case 'decrement':
+      	return {count: state.count - 1}
+    default: 
+      	throw new Error()
+  }
+}
+
+function Counter(){
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+  	<div>
+    	Count: {state.count}
+			<button onCLick={() => dispatch({type: 'increment'})}> + </button>
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+    </div>
+  )
+}
+```
+
+### useRef
+
+```react
+const refContainer = useRef(initialValue);
+```
+
+`useRef` 返回一个可变的ref对象。 其`.current`属性被初始化为传入的参数(initialValue)。 返回的ref对象在组件的整个生命周期内保持不变。
+
+
+
+### useCallback
+
+不懂
+
+### useMemo
+
+不懂
+
+TODO
+
+useContext的例子
 
 ### Diff
 
@@ -325,6 +446,12 @@ class ThemedButton extends React.Component {
 ```
 
 
+
+## Props
+
+类型检查
+
+### PropTypes
 
 
 
