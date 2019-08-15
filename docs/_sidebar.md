@@ -12,7 +12,6 @@
   * [yarn](node/npm/yarn.md)
 
 * npm包
-
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
   * [dayjs](node/npm/dayjs.md)
@@ -61,11 +60,13 @@
   * [观察者模式](computer/观察者模式.md)
   * [网络](computer/网络.md)
   * [一些名次](computer/notification.md)
-* 前端基础
 
+* 前端基础
   * [BFC](css/BFC.md)
+
 * 框架
   * [react](mvvm/react.md)
+  
 * 自动化
   * [CI/CD](mode/CICD.md)
   * [webpack](mode/webpack.md)
