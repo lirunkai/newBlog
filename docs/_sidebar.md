@@ -1,22 +1,6 @@
-* nodejs
-  * [command line](node/commandLine.md)
-  * [events](node/native/events.md)
-  * [stream](node/native/stream.md)
-  * [process](node/native/process.md)
-  * [child_process](node/native/child_process.md)
-  * [fs](node/native/fs.md)
-  * [path](node/native/path.md)
-  * [net](node/native/net.md)
-  * [http](node/native/http.md)  
-  * [npm](node/npm/npm.md)
-  * [yarn](node/npm/yarn.md)
-
-* npm包
-  * [minimist](node/npm/minimist.md)
-  * [chalk](node/npm/chalk.md)
-  * [dayjs](node/npm/dayjs.md)
-  * [lerna](node/npm/lerna.md)
-  * [semver](node/npm/semver.md)
+* 前端基础
+  * [BFC](css/BFC.md)
+  * [布局](css/layout.md)
 
 * javascript
   * [声明](js/声明.md)
@@ -44,6 +28,32 @@
   * [网络相关API](webApi/网络相关Api.md)
   * [DOM](webApi/DOM.md)
 
+* 框架
+  * [react](mvvm/react.md)
+
+
+* nodejs
+  * [command line](node/commandLine.md)
+  * [events](node/native/events.md)
+  * [stream](node/native/stream.md)
+  * [process](node/native/process.md)
+  * [child_process](node/native/child_process.md)
+  * [fs](node/native/fs.md)
+  * [path](node/native/path.md)
+  * [net](node/native/net.md)
+  * [http](node/native/http.md)  
+  * [npm](node/npm/npm.md)
+  * [yarn](node/npm/yarn.md)
+
+* npm包
+  * [minimist](node/npm/minimist.md)
+  * [chalk](node/npm/chalk.md)
+  * [dayjs](node/npm/dayjs.md)
+  * [lerna](node/npm/lerna.md)
+  * [semver](node/npm/semver.md)
+* [ora](node/npm/ora.md)
+  
+
 * 优化
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
@@ -60,12 +70,6 @@
   * [观察者模式](computer/观察者模式.md)
   * [网络](computer/网络.md)
   * [一些名次](computer/notification.md)
-
-* 前端基础
-  * [BFC](css/BFC.md)
-
-* 框架
-  * [react](mvvm/react.md)
   
 * 自动化
   * [CI/CD](mode/CICD.md)

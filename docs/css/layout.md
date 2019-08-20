@@ -26,6 +26,8 @@
 
 3. parent `display: flex; justify-content: center; align-items: center;`
 
+4. parent `display: grid;` child: `justify-self: center; align-self: center;`
+
 ## 两栏布局
 
 1. 使用float和BFC (块级格式上下文` Block Formatting Context`)
