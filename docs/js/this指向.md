@@ -29,3 +29,59 @@ ES6 中，箭头函数中this值， 指向定义时所在的对象
 因为所有的函数、方法、构造函数、getters或setters都在严格模式下执行. 因此如果我们没有指定this的值, this值将为`undefined`
 
 静态方法中的this, 表示当前类
+
+
+---
+
+### call的实现
+
+```javascript
+Function.prototype.call = function (content){
+  // 获取this执行的作用于
+  let content = content || window;
+  // 获取函数
+  content.fn = this;
+  //	获取参数
+  let args = [...arguments].slice(1)
+  // 执行函数
+  let result = content.fn(...args)
+  delete content.fn
+  return result
+}
+```
+
+### apply的实现
+
+```javascript
+Function.prototype.apply = function (content) {
+	let content = content || window;
+  content.fn = this
+  let result;
+	if(arguments[1]){
+    result = content.fn(arguments[1])
+  } else {
+    result = content.fn()
+  }
+  delete content.fn
+  return result
+}
+```
+
+### bind的实现
+
+```javascript
+Function.prototype.bind = function (content){
+  if (typeof this !== 'function') {
+    throw new TypeError('Error')
+  }
+  let _this = this
+  let args = [...arguments].slice(1)
+  return function K(){
+    if (this instanceof K) {
+      return new _this(...args, ...arguments)
+    } else {
+      return _this.apply(content, args.concat(...arguments))
+    }
+  }
+}
+```

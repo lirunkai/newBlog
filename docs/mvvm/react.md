@@ -93,7 +93,7 @@ React.render(
 )
 ```
 
-**state 和 lifecycle**
+### state 和 lifecycle
 
 ![生命周期](../_media/react生命周期.png)
 
@@ -174,6 +174,28 @@ function loginControl(){
 1. 通过`map`方法来生成列表元素
 2. 元素位于`map`方法内时需要设置键(key)属性
 3. key只是在兄弟节点唯一
+
+---
+
+
+
+### forwardRef
+
+`React.forwardRef`会创建一个React组件，可以接受一个ref属性转发到其组件树下的另一个组件中.
+
+```react
+const FancyBottom = React.forwardRef((props, ref) => {
+  <button ref={ref} className="fancybottom">
+     {props.children}
+  </button>
+})
+```
+
+### lazy
+
+`React.lazy()` 允许定义一个动态加载的组件
+
+`const SomeComponent = React.lazy(() => import('./SomeComponent'));`
 
 ### Hooks
 
@@ -383,7 +405,7 @@ render() {
 
 ### Portals
 
-提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案
+提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案 
 
 `React.createPortal(child, domNode)`
 
@@ -455,7 +477,39 @@ class ThemedButton extends React.Component {
 
 
 
+### 其他包包
+
+`react-transition-group`
+
+redux相关
+
+`redux`
+
+`react-redux`
+
+`react-thunk`
 
 
 
+router相关
+
+`react-router-config`
+
+`react-router-dom`
+
+
+
+### 优化
+
+1. `React.memo()` 只能作用在简单的函数组件上，本质是一个高阶函数，可以自动帮助组件执行`shouldComponentUpdate()`.
+
+2. 自定义`shouldComponentUpdate()`的更新机制
+3.  增加缓存机制, 打包时对没有修改的文件不进行文件名的变更
+4.  `React.lazy()` 动态加载模块, 实现代码的分割
+5.  http2
+6.  组件预加载 prefetch
+7.  cdn
+8. 图片懒加载
+9. 资源压缩
+10. Three Shaking
 

@@ -309,5 +309,7 @@ SYN-ACK 重传次数: 服务器发送完SYN-ACK包之后,如果未收到客户�
 
 `document.domain='aidoudou.com.cn'`
 
+`script` `img` `link` 不存在跨域问题
+
 
 

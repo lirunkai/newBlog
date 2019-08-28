@@ -38,6 +38,8 @@
 
 `\W`     匹配非字母、数字或者下划线
 
+`\n`   `n`是一个正整数。一个反向引用（back reference），指向正则表达式中第 n 个括号（从左开始数）中匹配的子字符串
+
 标志
 
 `g`    全局搜索
@@ -94,7 +96,7 @@ function incrementString(input) {
 
 ## **命名捕获组**
 
-在`()`前面使用`?<name>`标识
+在`()`里面使用`?<name>`标识
 
 ```javascript
 const reDate = /(?<year>[0-9]{4})-(?<month>[0-9]{2})/
