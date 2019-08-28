@@ -55,7 +55,7 @@
   * [dayjs](node/npm/dayjs.md)
   * [lerna](node/npm/lerna.md)
   * [semver](node/npm/semver.md)
-* [ora](node/npm/ora.md)
+  * [ora](node/npm/ora.md)
   
 
 * 优化
