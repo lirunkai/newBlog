@@ -1,6 +1,7 @@
 * 前端基础
   * [BFC](css/BFC.md)
   * [布局](css/layout.md)
+  * [面试](css/css面试点.md)
 
 * javascript
   * [声明](js/声明.md)
@@ -15,7 +16,7 @@
   * [Class](js/Class.md)
   * [Set](js/set.md)
   * [函数](js/函数.md)
-  * [ES6](js/ES6.md)
+  * [面试](js/js_interview.md)
 
 * WebApi
   * [全屏](webApi/fullscreen.md)

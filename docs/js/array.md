@@ -4,7 +4,7 @@
 
 ## 返回新数组
 
-`Array.from(likeArr, fn)`
+`Array.from(likeArr, fn, this)`
 
 将类数组转换成数组, 如果提供了fn, 数组内的每一项都会执行fn, 返回一个新数组
 

@@ -6,14 +6,15 @@
 **怎么会触发BFC呢?**
 
 1. float值不是none
-
 2. overflow值为 auto scroll hidden
-
 3. display为  table-cell、table-caption 和 inline-block 其中的一个
-
 4. position的值是 absolute 或者 fixed
 
-**BFC的布局规则，特征:**
+解决了什么？？
+
+垂直方向上的margin重叠
+
+**BFC的布局规则，特征:**  
 
 1. 内部的Box会在垂直方向, 一个接一个地放置。
 

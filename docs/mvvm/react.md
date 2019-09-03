@@ -197,6 +197,11 @@ const FancyBottom = React.forwardRef((props, ref) => {
 
 `const SomeComponent = React.lazy(() => import('./SomeComponent'));`
 
+### Suspense
+
+1. 代码分片
+2. 异步获取数据
+
 ### Hooks
 
 ### useState
