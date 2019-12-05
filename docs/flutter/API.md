@@ -42,6 +42,33 @@ value
 - CrossAxisAlignment.center 居中对齐
 - CrossAxisAlignment.end 居右对齐
 
+### SafeArea 安全布局
+
++ bottom 
+  + false 可以使用底部
++ child
+
+### Expanded 扩展空间
+
+按比例扩伸子组件所占的空间
+
+可以实现灵活布局
+
++ flex
++ child
+
+### Stack 层叠布局
+
+类似前端的绝对定位
+
+
+
+### Flex布局
+
+
+
+
+
 
 
 
@@ -133,7 +160,7 @@ decoration内部border 通过`Border.all`来设置边框
 
 ### Navigator
 
-`Navigator`是一个管理路由的`widget`，它通过一个栈来管理一个路由`widget`集合，通常当前屏幕显示的页面就是栈顶的路由。
+`Navigator`是一个管理路由的`widget`，它通过一个栈(先进后出)来管理一个路由`widget`集合，通常当前屏幕显示的页面就是栈顶的路由。
 
 `Navigator.push(BuildContext context, Route route)`
 
