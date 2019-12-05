@@ -115,7 +115,7 @@ DefaultTextStyle({
 **来个🌰**
 
 先看图
-![text](_media/text_flutter.png)
+![text](_media/text_fllutter.png)
 
 ```dart
 import 'package:flutter/material.dart';
