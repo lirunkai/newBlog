@@ -92,6 +92,80 @@ TextSpan({
 + `TextWidthBasis.longesLine`  字符串长度
 + `TextWidthBasis.parent`  父级宽度, 如果单行文本, 最大为文本的长度
 
+##### TextStyle
+
+```dart
+TextStyle({
+  bool inherit:true,
+  Color color,
+  Color backgroundColor,
+  double fontSize,
+  FontWeight fontWeight,
+  double letterSpacing,
+  double wordSpacing,
+  TextBaseline textBaseline,
+  double height,
+  Locale locale,
+  Paint foreground,
+  Paint background,
+  List<Shadow> shadow,
+  List<FontFeature> fontFeatures,
+  TextDecoration decoration,
+  Color decorationColor,
+  TextDecorationStyle decorationStyle,
+  double decorationThickness,
+  String debugLabel,
+  String fontFamily,
+  List<String> fontFamilyFallback,
+  String package
+})
+```
+
+##### FontStyle   enum
+
+字体的显示
+
++ `FontStyle.italic` 斜体
++  `FontStyle.nomal` 正常
+
+##### FontWeight  class
+
+字体粗细
+
++ `FontWeight.w100`
++  `FontWeight.w200`    ....    `FontWeight.w900`
++  `FontWeight.bold`  === `FontWeight.w700`
++  `FontWeight.normal` === `FontWeight.w400`
+
+##### TextBaseline enum
+
+垂直方向上字体的对齐方式
+
++ `TextBaseline.alphabetic`
++  `TextBaseline.ideographic`
+
+##### TextDecoration class
+
+文本的装饰
+
++ `TextDecoration.lineThrough`  横穿文本的装饰
++  `TextDecoration.overline`  文本上方添加装饰
++  `TextDecoration.underline`  文本下方添加装饰
+
+##### TextDecorationStyle enum
+
+文本的装饰样式
+
++ `TextDecorationStyle.dashed`
++  `TextDecorationStyle.dotted`
++  `TextDecorationStyle.double`
++  `TextDecorationStyle.solid`
++  `TextDecorationStyle.wavy`
+
+##### Shadow  class
+
+文本的阴影设置
+
 ##### DefaultTextStyle
 
 默认的text继承的样式类
