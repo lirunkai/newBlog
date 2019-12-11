@@ -53,6 +53,8 @@
   * [semver](node/npm/semver.md)
   * [ora](node/npm/ora.md)
 * Flutter
+  * [MaterialApp](flutter/app配置.md)
+  * [路由及导航](flutter/路由和导航.md)
   * [Scaffold](flutter/页面容器.md)
   * [Text](flutter/Text.md)
 * 优化
