@@ -19,6 +19,10 @@ void main() => runAutoSizeApp(MyApp(), width: designWidth, height: designeight);
 
 请求库
 
+引入 
+
+`import 'package:dio/dio.dart`
+
 `Dio dio = Dio()`
 
 发送get请求 `res = await dio.get('/user', queryParameters: {a: '1'})`
@@ -50,4 +54,6 @@ res = await dio.post('/formdata', data: formData)
   });
 response = await dio.post("/info", data: formData);
 ```
+
+### provider
 

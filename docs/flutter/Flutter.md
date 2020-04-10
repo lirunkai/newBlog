@@ -85,8 +85,6 @@ Widget build(BuildContext context) {
 
 
 
-### CLI
-
 `flutter packages get`
 
 `flutter run`

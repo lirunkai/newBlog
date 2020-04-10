@@ -1,6 +1,6 @@
 Sequelize
 
-
+sequelize是 mysql的orm框架
 
 ## 模型
 

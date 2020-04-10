@@ -1,6 +1,6 @@
 # Reflect
 
-个人对Reflect的理解就是把Object的一些方法归类, 归属到Reflect类下面, 让Reflect更加的纯粹, 实现更加合理
+内置对象, 提供拦截Javascript操作的方法. 
 
 ## Reflect.has(obj, name)
 

@@ -1,11 +1,60 @@
-JEST
+jest
 
-command line
+测试框架
 
-`jest`
+### 命令行
 
-`test(description, fn)` 标准写法
 
-`expect()`  返回一个期望值
 
-`.toBe()`  匹配器
+### 匹配器
+
+`toBeNull` 只匹配`null`
+
+`toBeUndefined` 只匹配`undefined`
+
+`toBeDefined` 和`toBeUndefined`相反
+
+`toBeTruthy` 匹配任何if为真的情况
+
+`toBeFalsy` 匹配任何if为假的情况
+
+`toBe()` 精确匹配
+
+`toEqual()` 递归检查对象或数组的每个字段
+
+`toMatch()` 检查正则表达式的字符串
+
+`toContain()` 检查一个数组或可迭代对象是否包含某个特定项
+
+### 异步
+
+**fetchData**
+
+Promise
+
+```
+test('the data is peanut butter', () => {
+  return fetchData().then(data => {
+    expect(data).toBe('peanut butter');
+  });
+});
+```
+
+async
+
+```
+test('the data is peanut butter', async () => {
+  const data = await fetchData();
+  expect(data).toBe('peanut butter');
+});
+
+test('the fetch fails with an error', async () => {
+  expect.assertions(1);
+  try {
+    await fetchData();
+  } catch (e) {
+    expect(e).toMatch('error');
+  }
+});
+```
+

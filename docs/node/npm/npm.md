@@ -114,3 +114,15 @@
     "devDependencies": {}, //工具包, 用来打包,测试你的包, 使用-D安装到这里 -D是--save-dev简写
 }
 ```
+
+
+
+---
+
+记录某次yarn不下来包怀疑网关的问题的解决办法
+
+```javascript
+npm config rm proxy
+npm config rm https-proxy
+```
+

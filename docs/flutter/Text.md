@@ -96,7 +96,7 @@ TextSpan({
 
 ```dart
 TextStyle({
-  bool inherit:true,
+  bool inherit:true,   // 是否继承DefaultTextStyle的样式
   Color color,
   Color backgroundColor,
   double fontSize,
@@ -115,9 +115,9 @@ TextStyle({
   TextDecorationStyle decorationStyle,
   double decorationThickness,
   String debugLabel,
-  String fontFamily,
+  String fontFamily, // 使用某种字体
   List<String> fontFamilyFallback,
-  String package
+  String package // 如果使用字体并且自己在第三方包中, package是包名字
 })
 ```
 

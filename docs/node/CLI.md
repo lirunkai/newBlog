@@ -102,5 +102,18 @@ program.parse(process.argv)
 
 ```
 
-
 [源码](https://github.com/lirunkai/demo)
+
+编写cli时常用的包
+
+`commander` 命令行工具，读取命令行输入,知道用户想要做什么
+
+`inquier`  交互式命令行工具, 给用户提供界面和选择方式
+
+`download-git-repo`  下载远程模版工具
+
+`ora`   显示loading
+
+`chalk`  更炫酷的console输出
+
+`log-symbols` 还没看
