@@ -1,3 +1,15 @@
+Redis
+
+NoSql数据库顶柱之一
+
+### 优势
+
++ 性能极高， 读取性能110000次/s  写性能 81000次/s
++  数据类型丰富 String List Hashes Set
++  原子性， 只有成功或者失败
++  丰富  支持publish/subscribe
++  可以持久化到磁盘
+
 安装
 
 `brew  install redis@4.0`
@@ -108,6 +120,51 @@ getrange startindex endindex
 减少1
 
 `DECR key`
+
+---
+
+node中redis的使用
+
+### ioredis
+
+安装 `yarn add ioredis`
+
+使用
+
+```javascript
+const Redis = require('ioredis')
+const redis = new Redis({
+	port: 6379,
+  host: '127.0.0.1',
+  family: 4,
+  db: 0
+})
+
+// string类型设置
+redis.set('foo', 'bar')
+
+async function getFoo() {
+  const value = await redis.get('foo')
+  console.log(value)
+  return value
+}
+
+getFoo()
+
+// Binary Data
+redis.set("foo:binary", Buffer.from("bar"))
+
+async function getFoo() {
+  const value = await redis.getBuffer('foo:binary')
+  console.log(value)
+  return value
+}
+
+// set 设置过期时间
+redis.set("key", 100, "EX", 10);
+```
+
+
 
 
 

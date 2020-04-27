@@ -15,7 +15,10 @@
   * [Class](js/Class.md)
   * [Set](js/set.md)
   * [函数](js/函数.md)
+  * [Reflect](js/Reflect.md)
+  * [Proxy](js/proxy.md)
   * [面试](js/js_interview.md)
+  * [typescript](js/typescript.md)
 * WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)

@@ -2,7 +2,19 @@ jest
 
 测试框架
 
+这里说一下写代码的逻辑： 先写测试用例 => 写代码 => 运行测试用例  => 通过上线
+
 ### 命令行
+
+`jest`
+
+### EXPECT
+
+`.not` 确定不是某个值
+
+```javascript
+expect(1+1).not.toBe(3) => pass
+```
 
 
 
@@ -22,9 +34,21 @@ jest
 
 `toEqual()` 递归检查对象或数组的每个字段
 
+```javascript
+let data = { one: 1}
+data.two = 2
+expect(data).toEqual({one: 1, two: 2})
+```
+
+
+
 `toMatch()` 检查正则表达式的字符串
 
 `toContain()` 检查一个数组或可迭代对象是否包含某个特定项
+
+数字相关的匹配器
+
+`toBeGreaterThan(num)`
 
 ### 异步
 

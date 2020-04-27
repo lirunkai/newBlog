@@ -15,3 +15,4 @@
  	1. cb， 接收一个`deadline`的参数, 拥有
       	1. timeRemaining  毫秒值
       	2. didTimeout， 如果是空闲时间调用返回false, 其他返回true
+
