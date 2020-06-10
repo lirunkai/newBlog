@@ -20,7 +20,7 @@
   * [面试](js/js_interview.md)
   * [typescript](js/typescript.md)
 * 面试
-  * [事件](interview/面试.md)
+  * [事件](interview/事件.md)
 * WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)
