@@ -19,6 +19,8 @@
   * [Proxy](js/proxy.md)
   * [面试](js/js_interview.md)
   * [typescript](js/typescript.md)
+* 面试
+  * [事件](interview/面试.md)
 * WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)
@@ -32,8 +34,6 @@
   * [DOM](webApi/DOM.md)
 * 框架
   * [框架](mvvm/框架.md)
-  * [react](mvvm/react.md)
-  * [react-redux](mvvm/react-redux.md)
   * [vue](mvvm/vue.md)
   * [vue or react](mvvm/vue和react的diff.md)
 * nodejs
@@ -48,6 +48,7 @@
   * [http](node/native/http.md)  
   * [npm](node/npm/npm.md)
   * [yarn](node/npm/yarn.md)
+  * [mysql](database/mysql.md)
 * npm包
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
@@ -55,6 +56,8 @@
   * [lerna](node/npm/lerna.md)
   * [semver](node/npm/semver.md)
   * [ora](node/npm/ora.md)
+* python
+  * [基础](python/python.md)
 * Flutter
   * [MaterialApp](flutter/app配置.md)
   * [路由及导航](flutter/路由和导航.md)

@@ -38,7 +38,7 @@
 
 `\W`     匹配非字母、数字或者下划线
 
-`\n`   `n`是一个正整数。一个反向引用（back reference），指向正则表达式中第 n 个括号（从左开始数）中匹配的子字符串
+`\n`   `n`是一个正整数。一个反向引用（back reference），指向正则表达式中第 n 个括号（从左开始数）中匹配的子字符串   eg `\1 \2`
 
 标志
 
@@ -53,6 +53,24 @@
 #### regexp.exec(str)
 
 在一个指定字符串中执行一个搜索匹配, 返回一个结果数组, 或者null
+
+exec有g和没g是两种用法:
+
+当exec有g时， 当前的Regexp是一个有状态的对象, 会返回上次成功匹配后的位置记录在`lastIndex`属性中。这个特性可以多次检测同一字符串
+
+没有g时, 每次都重置使用.
+
+```javascript
+const regex1 = RegExp('foo*', 'g');
+const str1 = 'table football, foosball';
+let array1;
+
+while ((array1 = regex1.exec(str1)) !== null) {
+  console.log(`Found ${array1[0]}. Next starts at ${regex1.lastIndex}.`);
+}
+```
+
+
 
 #### str.match(regexp)
 

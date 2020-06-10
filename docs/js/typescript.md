@@ -11,7 +11,6 @@ TS拥有自身编译器, 可使用最新的js特性，类似babel，由于TS带�
 + 性能安全
 + 完善的工具链
 + 下一代js特性
-+ 
 
 ### 配置
 
@@ -50,15 +49,13 @@ TS拥有自身编译器, 可使用最新的js特性，类似babel，由于TS带�
 
 通过declare来声明一个全局模块
 
-`declare var` 声明全局变量
+`declare var | let | const` 声明全局变量
 
 `declare function` 声明全局方法
 
 `declare class` 声明全局枚举类型
 
 `declare enum`  声明全局枚举类型
-
-`declare namespace`  声明（含有子属性的）全局对象
 
 `declare module` 扩展模块
 
