@@ -101,7 +101,7 @@ function tribonacci(signature,n){
 
 `some(fn)`
 
-数组的某一项通过了函数 返回true
+ 为数组中的每一个元素执行一次 `fn` 函数，直到找到一个使得 callback 返回一个“真值”（即可转换为布尔值 true 的值）。如果找到了这样一个值，`some()` 将会**立即返回** `true`。否则，`some()` 返回 `false`。也就是说some找到为true的元素后不会再向下执行
 
 `find(fn)`
 

@@ -19,7 +19,6 @@
   * [Proxy](js/proxy.md)
   * [面试](js/js_interview.md)
   * [typescript](js/typescript.md)
-  * [事件](js/事件.md)
 * WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)

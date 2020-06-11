@@ -83,5 +83,66 @@ location @mongrel {
 
 
 
+白名单
 
+
+
+```
+ server {
+        location / {
+                deny  192.168.0.1; // 禁止该ip访问
+                deny  all; // 禁止所有
+            }
+  }
+```
+
+
+
+适配移动端
+
+```
+server {
+ location / {
+        //移动、pc设备agent获取
+        if ($http_user_agent ~* '(Android|webOS|iPhone)') {
+            set $mobile_request '1';
+        }
+        if ($mobile_request = '1') {
+            rewrite ^.+ http://m.baidu.com;
+        }
+    } 
+}
+```
+
+
+
+配置跨域
+
+```
+location / {  
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods 'GET, POST, OPTIONS';
+    add_header Access-Control-Allow-Headers 'DNT,X-Mx-ReqToken,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Authorization';
+
+    if ($request_method = 'OPTIONS') {
+        return 204;
+    }
+} 
+```
+
+
+
+gzip
+
+```
+server{
+    gzip on; //启动
+    gzip_buffers 32 4K;
+    gzip_comp_level 6; //压缩级别，1-10，数字越大压缩的越好
+    gzip_min_length 100; //不压缩临界值，大于100的才压缩，一般不用改
+    gzip_types application/javascript text/css text/xml;
+    gzip_disable "MSIE [1-6]\."; // IE6对Gzip不友好，对Gzip
+    gzip_vary on;
+}
+```
 
