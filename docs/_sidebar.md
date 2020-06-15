@@ -9,7 +9,7 @@
   * [this指向](js/this指向.md)
   * [Array](js/array.md)
   * [String](js/string.md)
-  * [Object](js/Object.md)
+  * [Object和Map二三事](js/Object.md)
   * [RegExp](js/RegExp.md)
   * [Promise](js/Promise.md)
   * [Class](js/Class.md)

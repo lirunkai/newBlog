@@ -74,3 +74,39 @@ _.defaultsDeep({ 'user': { 'name': 'barney' } }, { 'user': { 'name': 'fred', 'ag
 
 ​	和`===`不同的是，可以判断`-0 +0`, `NaN`
 
+---
+
+Map
+
+`clear()` 清除Map对象的所有键值对
+
+`delete(key)` map有key, 移除key并且返回true 没有key, 返回false
+
+`get(key)` 返回键对应的值, 不存在返回undefined
+
+`set(key, value)` 设置Map对象中键的值。返回该Map对象。
+
+`has(key)` 返回一个布尔值，表示Map实例是否包含键对应的值
+
+`keys()` 按插入顺序包含了Map对象中每个元素的**键** 。
+
+`values()` 插入顺序包含了Map对象中每个元素的**值** 。
+
+`forEach()` 为 `Map`对象里的每一键值对调用一次callbackFn(value, key)函数
+
+`entries()` 按插入顺序包含了Map对象中每个元素的 **[key, value]** **数组**。
+
+---
+
+Object和Map有什么区别?
+
+key可以是任意值, 并且有序, 通过size可以获取键值对的个数, 频繁操作时表现更好。
+
+1. Map对象在迭代时会根据对象中元素的插入顺序进行`for..of`， 也就是说Map的key是有序的。 Object的key是无序的(es6后 会记录字符串和Symbol的插入顺序)
+2. Map默认情况下不包含任何键。 Object有一个原型, 原型链上可能有键名
+3. Map的键可以是任意值。 Object的键是String或者Symbol
+4. Map通过size直接获取键值对的个数。 Object需要通过Object.keys()
+5. 在频繁增删键时 表现比Object好。
+
+---
+

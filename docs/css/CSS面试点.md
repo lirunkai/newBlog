@@ -45,3 +45,39 @@
 去除select的默认样式
 
 `appearance : none`
+
+
+
+### H5标签
+
+`section`
+
+`nav`
+
+`menu`
+
+`article`
+
+`aside`
+
+`header` `footer` `main`
+
+`time`
+
+`embed` 代表一个*嵌入* 的外部资源，如应用程序或交互内容。
+
+`video` `audio` 媒体资源
+
+ `source`  指定*媒体源*
+
+`track` 元素指定*文本轨道*
+
+`canvas` 代表*位图区域* ，可以通过脚本在它上面实时呈现图形，如图表、游戏绘图等。
+
+`svg`  定义一个嵌入式*矢量图* 。
+
+`progress` 进度条
+
+`meter` 滑动条
+
+``
