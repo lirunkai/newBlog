@@ -2,6 +2,7 @@
   * [BFC](css/BFC.md)
   * [布局](css/layout.md)
   * [面试](css/css面试点.md)
+  
 * javascript
   * [声明](js/声明.md)
   * [内置类型](js/内置类型.md)
@@ -19,6 +20,7 @@
   * [Proxy](js/proxy.md)
   * [面试](js/js_interview.md)
   * [typescript](js/typescript.md)
+
 * WebApi
   * [全屏](webApi/fullscreen.md)
   * [MutationObserver](webApi/MutationObserver.md)
@@ -30,10 +32,12 @@
   * [文件相关API](webApi/文件相关API.md)
   * [网络相关API](webApi/网络相关Api.md)
   * [DOM](webApi/DOM.md)
+
 * 框架
   * [框架](mvvm/框架.md)
   * [vue](mvvm/vue.md)
   * [vue or react](mvvm/vue和react的diff.md)
+
 * nodejs
   * [command line](node/commandLine.md)
   * [events](node/native/events.md)
@@ -47,6 +51,7 @@
   * [npm](node/npm/npm.md)
   * [yarn](node/npm/yarn.md)
   * [mysql](database/mysql.md)
+
 * npm包
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
@@ -54,8 +59,10 @@
   * [lerna](node/npm/lerna.md)
   * [semver](node/npm/semver.md)
   * [ora](node/npm/ora.md)
+
 * python
   * [基础](python/python.md)
+
 * Flutter
   * [MaterialApp](flutter/app配置.md)
   * [路由及导航](flutter/路由和导航.md)
@@ -65,10 +72,8 @@
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
   * [安全](chrome/safety.md)
-* 算法
-  * [数据结构](algorithm/数据结构.md)
-  * [排序算法](algorithm/home.md)
-  * [字符串算法1](algorithm/字符串相关算法一.md)
+  
+  
 * 计算机
   * [策略模式和状态模式](computer/策略模式&状态模式.md)
   * [简单的一些模式](computer/简单的一些模式.md)

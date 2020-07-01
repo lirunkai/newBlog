@@ -18,14 +18,14 @@ yarn类似npm的一种方式
 
 `--dev`    **devDependencies**     开发依赖
 
-`--peer`   **peerDependencies**     这是“同伴依赖”，一种特殊的依赖，在发布包的时候需要
+`--peer`   **peerDependencies**     这是“同伴依赖”, 会检测当前环境是否安装，如果没有安装则提示.
 
 `--optional`    **optionalDependencies**   可选依赖
 
 ## 安装全部依赖  `yarn install` or `yarn`
 
     可选参数
-
+    
     1. `--force` 强制重新下载所有包
     2. `--production` 只安装生产环境的包
 
