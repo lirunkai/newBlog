@@ -5,20 +5,19 @@
   
 * javascript
   * [声明](js/声明.md)
-  * [内置类型](js/内置类型.md)
+  * [类型](js/内置类型.md)
+    * [Array](js/array.md)
+    * [String](js/string.md)
+    * [Object和Map二三事](js/Object.md)
+    * [RegExp](js/RegExp.md)
+    * [Reflect](js/Reflect.md)
+    * [Proxy](js/proxy.md)
   * [事件](js/EventLoop.md)
+  * [异步](js/Promise.md)
   * [this指向](js/this指向.md)
-  * [Array](js/array.md)
-  * [String](js/string.md)
-  * [Object和Map二三事](js/Object.md)
-  * [RegExp](js/RegExp.md)
-  * [Promise](js/Promise.md)
   * [Class](js/Class.md)
-  * [Set](js/set.md)
   * [函数](js/函数.md)
-  * [Reflect](js/Reflect.md)
-  * [Proxy](js/proxy.md)
-  * [面试](js/js_interview.md)
+  * [面试](js/interview.md)
   * [typescript](js/typescript.md)
 
 * WebApi
@@ -68,21 +67,23 @@
   * [路由及导航](flutter/路由和导航.md)
   * [Scaffold](flutter/页面容器.md)
   * [Text](flutter/Text.md)
+  
 * 优化
   * [缓存](chrome/cache.md)
   * [性能优化](chrome/performance.md)
   * [安全](chrome/safety.md)
   
-  
 * 计算机
-  * [策略模式和状态模式](computer/策略模式&状态模式.md)
-  * [简单的一些模式](computer/简单的一些模式.md)
-  * [观察者模式](computer/观察者模式.md)
+  * [设计模式](computer/设计模式.md)
+    * [策略模式和状态模式](computer/策略模式&状态模式.md)
+    * [观察者模式](computer/观察者模式.md)
   * [网络](computer/网络.md)
   * [一些名次](computer/notification.md)
+
 * 自动化
   * [CI/CD](mode/CICD.md)
   * [webpack](mode/webpack.md)
+
 * 看看源码
   * [vue-ref](sourceCode/vue-ref.md)
   * [vue-electron](sourceCode/vue-electron.md)

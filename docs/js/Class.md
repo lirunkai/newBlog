@@ -39,10 +39,19 @@
 
 子类的`prototype.__proto__`指向父类的`prototype` 表示方法的继承
 
+### 原型
+
+我们创建的每一个函数都有一个 prototype 属性，这个属性是一个指针，指向一个对象。这个对象的用途是包含可以由特定类型的所有实例共享的属性和方法，简单来说，该函数实例化的所有对象的__proto__的属性指向这个对象，它是该函数所有实例化对象的原型。
+
+![](../_media/prototype.png)
 
 ### 原型链
 
 每个对象拥有一个**原型对象**，对象以其原型为模板、从原型继承方法和属性。原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为**原型链 (prototype chain)**
+
+原型链的主要实现方法是让构造函数的 prototype 对象等于另一个类型的实例，此时的 prototype 对象因为是实例，因此将包含一个指向另一个原型的指针，相应地另一个原型中也包含着一个指向另一个构造函数的指针
+
+![](../_media/prototype_sub.png)
 
 `constructor` 指向了用于构造此实例对象的构造函数.
 
@@ -51,6 +60,19 @@
 `__proto__`  实例上的,指向该对象的`prototype`
 
 `prototype.__proto__`  上一层的原型对象, 顶层为null，null没有原型, 作为原型链的终点.
+
+``` javascript
+function Persen() {}
+
+Person.prototype = {} // 原型
+
+// student 继承
+function Student() {}
+Student.prototype = new Person() // 原型链
+Student.constructor = Student;
+```
+
+
 
 ### new 做了什么？
 
@@ -61,6 +83,13 @@
 
 实现一个new
 
-```
+``` javascript
+function myNew() {
+  let obj = {}
+  const Constructor = [].shift.apply(arguments)
+  obj.__proto__ = Constructor.prototype
+  let ret = Constructor.apply(obj, arguments)
+  return typeof ret === 'object' ? ret : obj
+}
 
 ```
