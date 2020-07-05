@@ -180,3 +180,45 @@ destroyed
 
 `transition`和`keep-alive`
 
+`keep-alive` 涉及到的`LRU`算法
+
+max 设置最多可以缓存多少组件 
+
+在 keep-alive 中缓存达到 max，新增缓存实例会优先淘汰最近没有被访问到的实例🎉🎉🎉
+
+1. LRU缓存
+
+设置最大缓存max, 超过的时候删除使用最少的
+
+``` javascript
+class LRU {
+  constructor(max) {
+    this.cache = new Map()
+    this.max = max
+  }
+
+  get(key) {
+    if(this.cache.has(key)) {
+      let temp = this.cache.get(key)
+      this.cache.delete(key)
+      this.cache.set(key, temp)
+      return temp
+    }
+    return -1
+  }
+
+  set(key, value) {
+    // 更新
+    if(this.cache.has(key)) {
+      this.cache.delete(key)
+    } else {
+      // 新增 处理是否大于max
+      if(this.cache.size >= this.max) {
+        this.cache.delete(this.cache.keys().next().value)
+      }
+    }
+    this.cache.set(key, value)
+  }
+}
+
+```

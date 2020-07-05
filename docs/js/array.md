@@ -190,8 +190,6 @@ s.add(1).add(2).add(2)
 
 由于Set是类数组， 所以可以使用`Array.from()`来转成数组去使用数组的方法
 
-
-
 ---
 
 ## 扩展数据结构:
@@ -213,6 +211,10 @@ class Queue {
   
   size() {
     return this.equeue.length
+  }
+
+  front() {
+    return this.equeue[0]
   }
   
   dequeue() {
@@ -400,7 +402,120 @@ var findDiagonalOrder = function(matrix) {
 };
 ```
 
-### 栈(FILO first-in-last-out)
+### 栈(FILO last-in-first-out)
+
+遵循一种后入先出原则的有序集合
+
+``` javascript
+class Stack {
+  constructor() {
+    this.list = []
+  }
+
+  push(ele) {
+    return this.list.push(ele)
+  }
+
+  pop() {
+    return this.list.pop()
+  }
+
+  size() {
+    return this.list.length
+  }
+
+  clear() {
+    this.list = []
+  }
+}
+```
+
+### 链表
+
+链表不需要连续的内存空间，它是由一组零散的内存块透过指针连接而成，所以，每一个块中必须包含当前节点内容以及后继指针
+
+``` javascript
+class NodeList {
+  constructor() {
+    this.length = 0
+    this.head = null
+  }
+
+  getList() {
+    return this.head
+  }
+
+  append(element) {
+    let node = new Node(element)
+    let p = this.head
+    if(!this.head) {
+      head = node
+    } else {
+      while(p.next) {
+        p = p.next
+      }
+    }
+    this.length += 1
+  }
+
+  search(element) {
+    let p = this.head
+    if(!p) return false
+    while(p) {
+      if(p.element == element) return true
+      p = p.next
+    }
+    return false
+  }
+
+  insert(position, element) {
+    let node = new Node(element)
+    if(position >= 0 && position <= length) {
+      let pre = this.head
+      let current = this.head
+      let index = 0
+
+      if(position == 0) {
+        node.next = pre
+        this.head = node
+      } else {
+        while(index < position) {
+          pre = current
+          current = current.next
+          index ++
+        }
+        pre.next = node
+        node.next = curr
+      }
+      length += 1
+    } else {
+      return null
+    }
+  }
+
+  remove(element) {
+    let p = this.head
+    let pre = this.head
+    if(!this.head) return
+    while(p) {
+      if(p.element == element) {
+        p = p.next
+        pre.next = p
+      } else {
+        pre = p
+        p = p.next
+      }
+    }
+  }
+}
+
+class Node {
+  constructor(element) {
+    this.element = element
+    this.next = null
+  }
+}
+```
 
 ---
 
@@ -564,3 +679,81 @@ function soonSort(arr){
 ```
 
 还有随机快速排序, 计数排序
+
+
+---
+
+### 面试题
+
+1. 数组里面有10万个数据，取第一个元素和第10万个元素的时间相差多少？
+
+相差无几, JS里数组的存储方式是哈希表，可以通过键名key直接获取到对应的值，时间复杂度就是O（1）
+
+2. 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素。
+
+Top K 问题
+
+``` javascript
+
+```
+
+3. 将两个升序链表合并为一个新的升序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。 
+
+```
+输入：1->2->4, 1->3->4
+输出：1->1->2->3->4->4
+```
+
+解答
+
+``` javascript
+
+function mergeNodeList(l1, l2) {
+  if(l1 == null) {
+    return l2
+  }
+  if(l2 == null) {
+    return l1
+  }
+  if(l1.val < l2.val) {
+    l1.next = mergeNodeList(l1.next, l2)
+    return l1
+  } else {
+    l2.next = mergeNodeList(l2.next, l1)
+    return l2
+  }
+}
+```
+4. 设计一个支持push, pop, top操作, 可以在常数时间内检索到最小元素的栈
+
+``` javascript
+
+class MinStack {
+  constructor() {
+    this.items = []
+    this.min = null
+  }
+
+  push(x) {
+    if(!this.items.length) this.min = x
+    this.min = Math.min(x, this.min)
+    this.items.push(x)
+  }
+
+  pop() {
+    let num == this.items.pop()
+    this.min = Math.min(...this.items)
+    return num
+  }
+
+  top() {
+    if(!this.items.length) return null
+    return this.items[this.items.length - 1]
+  }
+
+  getMin() {
+    return this.min
+  }
+}
+
+```

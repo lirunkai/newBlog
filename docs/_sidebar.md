@@ -38,11 +38,10 @@
   * [vue or react](mvvm/vue和react的diff.md)
 
 * nodejs
+  * [进程](node/进程.md)
   * [command line](node/commandLine.md)
   * [events](node/native/events.md)
   * [stream](node/native/stream.md)
-  * [process](node/native/process.md)
-  * [child_process](node/native/child_process.md)
   * [fs](node/native/fs.md)
   * [path](node/native/path.md)
   * [net](node/native/net.md)
@@ -50,8 +49,6 @@
   * [npm](node/npm/npm.md)
   * [yarn](node/npm/yarn.md)
   * [mysql](database/mysql.md)
-
-* npm包
   * [minimist](node/npm/minimist.md)
   * [chalk](node/npm/chalk.md)
   * [dayjs](node/npm/dayjs.md)

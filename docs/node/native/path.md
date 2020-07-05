@@ -21,3 +21,11 @@
 ### **判断**
 
 `path.isAbsolute()` 判断是否是绝对路径
+
+### 内置路径
+
+`__dirname` 被执行的js所在文件的绝对路径
+
+`__filename` 被执行的js的绝对路径
+
+`process.cwd()` 返回运行node命令时所在的文件夹的绝对路径
