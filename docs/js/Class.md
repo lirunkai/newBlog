@@ -85,10 +85,9 @@ Student.constructor = Student;
 
 ``` javascript
 function myNew() {
-  let obj = {}
-  const Constructor = [].shift.apply(arguments)
-  obj.__proto__ = Constructor.prototype
-  let ret = Constructor.apply(obj, arguments)
+  const Con = [].shift.apply(arguments)
+  const obj = Object.create(Con)
+  let ret = Con.apply(obj, arguments)
   return typeof ret === 'object' ? ret : obj
 }
 

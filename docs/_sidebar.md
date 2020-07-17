@@ -75,6 +75,7 @@
     * [策略模式和状态模式](computer/策略模式&状态模式.md)
     * [观察者模式](computer/观察者模式.md)
   * [网络](computer/网络.md)
+  * [算法](computer/算法整理.md)
   * [一些名次](computer/notification.md)
 
 * 自动化
