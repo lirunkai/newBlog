@@ -1,4 +1,4 @@
-python是动态类型语言
+python 是动态类型语言
 
 也就是说以下是成立的， 不会报错
 
@@ -7,25 +7,45 @@ a = "123"
 a = 123
 ```
 
-这里记录下python和js语法的不一致的地方
+这里记录下 python 和 js 语法的不一致的地方
 
-1. 声明 python不需要`let const`等标记进行变量声明 直接写就行
-2. python的布尔值是True 和 False.
+1. 声明 python 不需要`let const`等标记进行变量声明 直接写就行
+2. python 的布尔值是 True 和 False.
 3. 多行字符串使用`'''...'''`
-4. 与and 或 or 非not
-5. if 语句使用`:`  ` if age >= 18:` if elif else
-6. for语句同样适用`:`   `for name in names:`
-7. while语句同样使用`:`  `while m > 0:`
+4. 与 and 或 or 非 not
+5. if 语句使用`:` `if age >= 18:` if elif else
+6. for 语句同样适用`:` `for name in names:`
+7. while 语句同样使用`:` `while m > 0:`
 
+### 语句
 
+```python
+while m > 0:
+	pass
 
-自带函数
+if age>= 18:
+	pass
+
+for name in names:
+	pass
+
+for x in len(names):
+	pass
+```
+
+### 关键字
+
+`in` 测试一个序列是否包含某个值
+
+`is` 判断
+
+### 自带函数
 
 `range(num)` 生成一个整数序列
 
-`list()` 转换为list
+`list()` 转换为 list
 
-`abs(num)`  返回一个数字的绝对值
+`abs(num)` 返回一个数字的绝对值
 
 `int()` 转换为整数
 
@@ -35,7 +55,7 @@ a = 123
 
 `bool()` 转换为布尔值
 
-`map(fn, list)` 列表的每一项都执行fn, 返回一个新列表. fn的第一项是列表的元素
+`map(fn, list)` 列表的每一项都执行 fn, 返回一个新列表. fn 的第一项是列表的元素
 
 `filter(fn, list)` 过滤序列
 
@@ -45,7 +65,7 @@ a = 123
 
 ### string
 
-`ord()`  获取字符的整数表示 `ord('A') #65`
+`ord()` 获取字符的整数表示 `ord('A') #65`
 
 `chr()` 把编码转换为对应的字符 `chr(65) #A`
 
@@ -63,91 +83,113 @@ a = 123
 'hi, %s, you have $%d' % ('michael', 100)
 ```
 
-
-
 ### list
 
 一种有序的集合 `classmates = ['michael', 'bob', 'tracy']`
 
-`len(list)` 表示list的长度
+`len(list)` 表示 list 的长度
 
-`list.append(item)` 插入元素到list末尾
+`list.append(item)` 插入元素到 list 末尾
 
-`list.insert(index, item)` 插入元素到list的index位置
+`list.insert(index, item)` 插入元素到 list 的 index 位置
+
+`list.extend(iterable)` 类似`a[len(a):]=iterable`
+
+`list.remove(x)` 移除列表中第一个值为 x 的元素
 
 `list.pop()` 删除队尾元素
 
 `list.pop(index)` 删除索引位置的元素
 
+`list.clear()` 清空列表
+
+`list.index(x, [start, end])` 返回 list 列表中第一个元素为 x 的索引
+
+`list.count(x)` 返回 list 列表中 x 出现的次数
+
+`list.reverse()`
+
+`list.sort()`
+
+`list.copy()` 返回列表的浅拷贝
+
 切片
 
-`list[start:end]` 取出start到end的元素, 不包含end（前开后闭原则）
+`list[start:end:step]`
 
+取出 start 到 end 的元素, 不包含 end（前开后闭原则）
 
+start, end, step 都可以为负数
+
+step 相隔多少取一次
+
+```python
+a = [1,3,2,4]
+a[::-1]
+// [4,2,3,1]
+```
 
 ### tuple 元组
+
+通过`,`相隔，创建一个元祖， 一般需要使用`()`包裹
 
 初始化之后不可修改 `classmates=('michael', 'bob', 'tra')`
 
 元组只能通过下标访问
 
-
-
-### dict
-
-字典 也就是js中的object，使用(key-value)存储
-
-1. 查询某个key时, 需要使用`d[key]`，不能使用`.`查询
-2. 通过`in`判断key是否存在`key in dict`
-3. 通过`d.get(key, [value])` 如果key不存在返回None， 或者指定的value
-
-`d.values()` 返回value的list
-
-`d.items()` 返回ke y-value的list
-
-
-
 ### set
 
-一组没有重复key的集合
+一组没有重复 key 的集合
+
+通过`set([key1, key2])` 或者`{key1, key2}` 来创建一个 set
 
 `s = set([1,2,3])`
 
-`s.add(key)` 添加元素到set中
+`s.add(key)` 添加元素到 set 中
 
-`s.remove(key)` 从set中删除key
+`s.remove(key)` 从 set 中删除 key
 
+### dict
 
+字典 也就是 js 中的 object，使用(key-value)存储
+
+通过`{key: value}`直接声明 或者通过`dict([(key, value), (key, value)])` `dict(key=value, key=value)`来声明
+
+1. 查询某个 key 时, 需要使用`d[key]`，不能使用`.`查询
+2. 通过`in`判断 key 是否存在`key in dict`
+3. 通过`d.get(key, [value])` 如果 key 不存在返回 None， 或者指定的 value
+
+`d.values()` 返回 value 的 list
+
+`d.items()` 返回 key-value 的 list
 
 ### 函数
 
-定义: 通过`def`定义一个函数 函数的返回值需用return语句返回
+定义: 通过`def`定义一个函数 函数的返回值需用 return 语句返回
 
 1. 函数是为了复用
-2. pass占位符可以声明一个空函数
-3. 返回多个值时， 实际返回的是一个tuple
+2. pass 占位符可以声明一个空函数
+3. 返回多个值时， 实际返回的是一个 tuple
 4. 通过`__name__`可以拿到函数名
 
 参数
 
-参数定义的顺序: 必选参数, 默认参数, 可变参数（*args）, 命名关键字参数, 关键字参数(**dict)
+参数定义的顺序: 必选参数, 默认参数, 可变参数（\*args）, 命名关键字参数, 关键字参数(\*\*dict)
 
-+ 位置参数
-+ 默认参数 默认参数必须指向不可变对象`def perseon(name, age=20)`
-+ 可变参数 给参数前面添加`*`来声明一个可变参数 `def person(*info)`
-+ 关键字参数 给参数前面添加`**`来定一个关键字参数 `def person(name, age, **other)`
-  + 命名关键字参数, 通过`*`号进行分割, `*`号后的是命名关键字`def perseon(name, age, *, city, job)`
+- 位置参数
+- 默认参数 默认参数必须指向不可变对象`def perseon(name, age=20)`
+- 可变参数 给参数前面添加`*`来声明一个可变参数 `def person(*info)`
+- 关键字参数 给参数前面添加`**`来定一个关键字参数 `def person(name, age, **other)`
+  - 命名关键字参数, 通过`*`号进行分割, `*`号后的是命名关键字`def perseon(name, age, *, city, job)`
 
-**匿名函数: lambda表达式`lambda x:x*x**`
+**匿名函数: lambda 表达式`lambda x:x\*x**`
 
-+ 冒号之前的为参数
-+ 冒号之后的为返回
+- 冒号之前的为参数
+- 冒号之后的为返回
 
 ### 装饰器
 
 在代码运行期间动态增加功能的方式, 称之为装饰器
-
-
 
 ### 列表生成式
 
@@ -155,25 +197,21 @@ a = 123
 
 `[x * x for x in range(1, 11) if x % 2 == 0]` 仅筛选出偶数的平方
 
-`[m + n for m in 'ABC' for n in 'XYZ']`  双排列
+`[m + n for m in 'ABC' for n in 'XYZ']` 双排列
 
 `[x if x % 2 == 0 else -x for x in range(1, 11)]`
-
-
 
 ### 生成器
 
 在循环的过程中不断推算出后续的元素
 
-将列表生成式的`[]`改成`()`就创建好了一个生成器generator
+将列表生成式的`[]`改成`()`就创建好了一个生成器 generator
 
-generator的值需要使用next()来调用，通过for循环来取generator的值不需要写next
-
-
+generator 的值需要使用 next()来调用，通过 for 循环来取 generator 的值不需要写 next
 
 ### 类
 
-通过class关键字定义一个类
+通过 class 关键字定义一个类
 
 通过`__init__`方法 可以在创建实例的时候, 绑定一些属性
 
@@ -184,9 +222,9 @@ class Student(object): # 默认从object继承 也可以写其他类
 		self.score = score
 ```
 
-私有变量  给变量添加`__`前缀
+私有变量 给变量添加`__`前缀
 
-实例方法 第一个参数永远是self
+实例方法 第一个参数永远是 self
 
 多态： 子集重新定义父集的方法, 每次调用时只会调用子集子集的方法
 
@@ -202,7 +240,7 @@ class Student(object):
 
 限制属性实例
 
-由于python是动态语言, 实例之后可以动态添加属性。那怎么能限制住class只能添加某些属性？ 通过`__slots__`来限制该class实例能添加的属性 **限制的属性只队当前类实例起作用**
+由于 python 是动态语言, 实例之后可以动态添加属性。那怎么能限制住 class 只能添加某些属性？ 通过`__slots__`来限制该 class 实例能添加的属性 **限制的属性只队当前类实例起作用**
 
 ```python
 class Student(object):
@@ -211,9 +249,9 @@ class Student(object):
 
 类方法装饰器
 
-`@property`  把一个getter方法变成属性
+`@property` 把一个 getter 方法变成属性
 
-`@keyFnName.setter`  由`@property`创建, 负责把一个setter方法变成属性赋值
+`@keyFnName.setter` 由`@property`创建, 负责把一个 setter 方法变成属性赋值
 
 多重继承
 
@@ -222,7 +260,42 @@ class Dog(Mammal, RunnableMixin):
 	pass
 ```
 
+### Enum 类
 
+### 模块
 
-Enum类
+模块搜索路径
 
+1. 包含输入脚本的目录
+2. 一个包含目录名称的列表
+3. 取决于安装的默认设置
+
+`sys.path`变量是一个字符串列表，用于确定解释器的模块搜索路径
+
+添加模块路径
+
+`sys.path.append()`
+
+```python
+import pb
+
+from pb import fn1, fn2
+
+```
+
+---
+
+注意
+
+1. 多重赋值
+
+```python
+a, b = 0, 1
+while a < 10:
+	print(a)
+	a, b = b, a+b
+```
+
+在任何赋值发生之前就被求值了。右手边的表达式是从左到右被求值的。
+
+2.

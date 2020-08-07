@@ -1,34 +1,37 @@
 # yarn
 
-yarn类似npm的一种方式
+yarn 类似 npm 的一种方式
 
 ## 初始化
 
 `yarn init -y`
 
-## 添加一个包  `yarn add package`
+## 添加一个包 `yarn add package`
 
-## 移除一个包  `yarn remove package`
+## 移除一个包 `yarn remove package`
 
 ## 更新一个包 `yarn upgrade package`
+
+## 命令行使用某个 create-\*包创建项目
+
+`yarn create react-app`
 
 ### 安装参数
 
 `yarn add package` 默认安装到`dependencies` 常规依赖, 代码运行时所需要的
 
-`--dev`    **devDependencies**     开发依赖
+`--dev` **devDependencies** 开发依赖
 
-`--peer`   **peerDependencies**     这是“同伴依赖”, 会检测当前环境是否安装，如果没有安装则提示.
+`--peer` **peerDependencies** 这是“同伴依赖”, 会检测当前环境是否安装，如果没有安装则提示.
 
-`--optional`    **optionalDependencies**   可选依赖
+`--optional` **optionalDependencies** 可选依赖
 
-## 安装全部依赖  `yarn install` or `yarn`
+## 安装全部依赖 `yarn install` or `yarn`
 
     可选参数
-    
+
     1. `--force` 强制重新下载所有包
     2. `--production` 只安装生产环境的包
-
 
 ## 全局安装 `yarn global add package` `yarn global upgrade`
 
@@ -36,7 +39,7 @@ yarn类似npm的一种方式
 
 ### 工作区
 
-在使用npm的过程中, 每个项目都会根据自己的依赖生成自己的`node_modules`.
+在使用 npm 的过程中, 每个项目都会根据自己的依赖生成自己的`node_modules`.
 
 比如使用工作区之前, 我们的结构是这样的
 

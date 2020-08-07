@@ -16,6 +16,19 @@
 
 ---------------------------------------------
 
+## 强缓存
+
+`Cache-Control` 和 `expires`属于强缓存, 如果强缓存没有过期, 不发送请求, 直接从本地获取缓存.
+
+## 协商缓存
+
+强缓存失效之后, 发送请求至服务器, 服务器根据`Request Headers`里的`Etag/If-None-Match, Last-Modified/if-Modified-Since`来判断是否返回文件, 或者协商返回304, 使用缓存文件.
+
+当资源过期时（使用Cache-Control标识的max-age），发现资源具有Etage声明，则再次向web服务器请求时带上头If-None-Match （Etag的值）。web服务器收到请求后发现有头If-None-Match 则与被请求资源的相应校验串进行比对：
+如果相同，则返回304
+如果不同，则返回200和资源文件
+
+
 缓存的控制主要通过`HTTP Response Header` 也就是我们常说的响应头
 
 控制缓存的响应头:
@@ -52,14 +65,8 @@
 
   6. `If-None-Match`  Etag的值, **请求时提交**
 
-## 强缓存
+## 缓存位置
 
-`Cache-Control` 和 `expires`属于强缓存, 如果强缓存没有过期, 不发送请求, 直接从本地获取缓存.
-
-## 协商缓存
-
-强缓存失效之后, 发送请求至服务器, 服务器根据`Request Headers`里的`Etag/If-None-Match, Last-Modified/if-Modified-Since`来判断是否返回文件, 或者协商返回304, 使用缓存文件.
-
-当资源过期时（使用Cache-Control标识的max-age），发现资源具有Etage声明，则再次向web服务器请求时带上头If-None-Match （Etag的值）。web服务器收到请求后发现有头If-None-Match 则与被请求资源的相应校验串进行比对：
-如果相同，则返回304
-如果不同，则返回200和资源文件
+1. Service Worker
+2. Memory Cache 内存
+3. Disk Cache 磁盘
