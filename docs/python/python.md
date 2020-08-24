@@ -31,6 +31,9 @@ for name in names:
 
 for x in len(names):
 	pass
+
+for x in range(1, len(names)):
+	pass
 ```
 
 ### 关键字
@@ -70,6 +73,10 @@ for x in len(names):
 `chr()` 把编码转换为对应的字符 `chr(65) #A`
 
 `str.lower()` 返回小写的字符串
+
+`str.upper()` 返回大写的字符串
+
+`str.join(list)` 返回一个由 iterable 中的字符串拼接而成的字符串, 如果有非字符串报错
 
 格式化
 

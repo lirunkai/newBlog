@@ -23,12 +23,6 @@
   - [手锤代码](js/手写.md)
   - [typescript](js/typescript.md)
 
-- chrome
-
-  - [安全](chrome/safety.md)
-  - [优化](chrome/performance.md)
-  - [缓存](chrome/cache.md)
-
 - WebApi
 
   - [全屏](webApi/fullscreen.md)
@@ -95,6 +89,9 @@
   - [算法](computer/算法整理.md)
   - [一些名次](computer/notification.md)
   - [小技巧](computer/command.md)
+  - [安全](computer/safety.md)
+  - [优化](computer/performance.md)
+  - [缓存](computer/cache.md)
 
 - 自动化
 
