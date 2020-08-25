@@ -81,12 +81,18 @@
   - [安全](chrome/safety.md)
 
 - 计算机
-
   - [设计模式](computer/设计模式.md)
     - [策略模式和状态模式](computer/策略模式&状态模式.md)
     - [观察者模式](computer/观察者模式.md)
   - [网络](computer/网络.md)
   - [算法](computer/算法整理.md)
+    - [数组](算法/数组list.md)
+    - [链表](算法/链表.md)
+    - [队列](算法/队列queue.md)
+    - [栈](算法/栈stack.md)
+    - [堆](算法/堆Heap.md)
+    - [树](算法/树Tree.md)
+    - [字典](算法/HashMap.md)
   - [一些名次](computer/notification.md)
   - [小技巧](computer/command.md)
   - [安全](computer/safety.md)
