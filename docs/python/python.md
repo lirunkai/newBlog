@@ -60,11 +60,15 @@ for x in range(1, len(names)):
 
 `map(fn, list)` 列表的每一项都执行 fn, 返回一个新列表. fn 的第一项是列表的元素
 
+`all(iterable)` 判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False。
+
 `filter(fn, list)` 过滤序列
 
 `sorted(list, key=fn)` 排列
 
 `type()` 判断对象类型
+
+`ord()` 返回传入的字符串对应的ASCII码
 
 ### string
 
@@ -75,6 +79,8 @@ for x in range(1, len(names)):
 `str.lower()` 返回小写的字符串
 
 `str.upper()` 返回大写的字符串
+
+`str.isalpha()` 返回是否只由字母组成
 
 `str.join(list)` 返回一个由 iterable 中的字符串拼接而成的字符串, 如果有非字符串报错
 

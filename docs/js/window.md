@@ -16,3 +16,11 @@
       	1. timeRemaining  毫秒值
       	2. didTimeout， 如果是空闲时间调用返回false, 其他返回true
 
+
+---
+
+1. parseInt 和 Number的区别?
+
+parseInt遇到字母就不会再解析了
+
+Number遇到字母会返回NaN

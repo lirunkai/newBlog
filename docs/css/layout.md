@@ -122,3 +122,57 @@
 	flex: 1;
 }
 ```
+
+## 上下固定， 中间自适应
+
+绝对定位
+```css
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: red;
+}
+.container {
+  position: absolute;
+  top: 100px;
+  bottom: 100px;
+  width: 100%;
+  background: green;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  background: red;
+}
+```
+
+flex布局
+```css
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+}
+
+.header {
+  height: 100px;
+  background: red;
+}
+.container {
+  flex-grow: 1;
+  background: green;
+}
+.footer {
+  height: 100px;
+  background: red;
+}
+```

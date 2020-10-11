@@ -7,7 +7,7 @@
 
 1. float值不是none
 2. overflow值为 auto scroll hidden
-3. display为  table-cell、table-caption 和 inline-block 其中的一个
+3. display为  inline-block flex  inline-flex table-cell
 4. position的值是 absolute 或者 fixed
 
 解决了什么？？
