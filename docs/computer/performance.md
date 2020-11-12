@@ -44,6 +44,8 @@ CRP `Critical Rendering Path` 关键路径渲染
 
   2. 使用`visibility:hidden`
 
+`opacity` 和 `transform` 不会触发reflow repaint
+
 ## Preload
 
 `<link rel="preload" as="script" href="aaa.js">`  预加载js文件
@@ -52,23 +54,35 @@ CRP `Critical Rendering Path` 关键路径渲染
 
 `<link rel="">`
 
-## Preconnect
+## 服务端渲染
 
 
+## 网络
 
-## 减少http请求
+### 减少http请求
 
 1. 合并图片, css,js。 
 2. 小图片使用Base64
 3. 缓存
+4. 图片延迟加载
+5. 响应式图片
+6. 降低图片质量
+7. css特效代替图片
+10. 通过webpack按需加载文件, 提取第三方库文件
 
 ### 使用CDN
 
 cnd是一组分散在不同地理位置的web服务器，用来给用户更高效地发送内容。
 
-### 使用Gzip
-
 ### 静态资源不携带cookie， 使用不同的域名
+
+### 使用http2
+
+### 使用缓存, 不重复加载相同资源
+
+## 大小
+
+### 使用Gzip
 
 
 
