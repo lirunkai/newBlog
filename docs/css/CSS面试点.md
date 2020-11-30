@@ -121,3 +121,25 @@ ie盒模型： width和height包含 content, padding, border
   background: tomato;
 }
 ```
+
+
+
+### 文本溢出
+
+```css
+// 单行
+.text{
+	overflow: hidden;
+	text-overflow: ellipsis; (省略号)
+	white-space: nowrap; (不换行)
+}
+// 多行
+.text {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+```
+

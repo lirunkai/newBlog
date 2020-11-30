@@ -16,6 +16,7 @@
     - [Proxy](js/proxy.md)
   - [事件](js/EventLoop.md)
   - [异步](js/Promise.md)
+  - [网络](js/网络.md)
   - [this 指向](js/this指向.md)
   - [Class](js/Class.md)
   - [函数](js/函数.md)
@@ -43,6 +44,7 @@
   - [vue](mvvm/vue.md)
   - [vue or react](mvvm/vue和react的diff.md)
   - [react](mvvm/react.md)
+  - [状态管理](mvvm/状态管理.md)
 
 - nodejs
 
@@ -85,7 +87,6 @@
   - [设计模式](computer/设计模式.md)
     - [策略模式和状态模式](computer/策略模式&状态模式.md)
     - [观察者模式](computer/观察者模式.md)
-  - [网络](computer/网络.md)
   - [算法](computer/算法整理.md)
     - [数组](算法/数组list.md)
     - [链表](算法/链表.md)
@@ -99,7 +100,7 @@
   - [安全](computer/safety.md)
   - [优化](computer/performance.md)
   - [缓存](computer/cache.md)
-
+  
 - 自动化
 
   - [CI/CD](mode/CICD.md)

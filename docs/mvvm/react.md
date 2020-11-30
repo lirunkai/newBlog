@@ -4,6 +4,10 @@
 
 JSX在运行时的返回结果（即React.createElement()的返回值）都是React Element
 
+jsx会被babel解析为`React.createElement(type, config, children)`
+
+在`createElement`函数中对参数进行标准化
+
 ---
 1. 为什么每个jsx文件中都必须显示声明React?
 
@@ -86,11 +90,30 @@ cancelAnimationFrame(frame)
 
 ## Hooks
 
+一套能够使函数组件更强大, 更灵活的钩子
+
+为什么需要Hooks？
+
+1. 函数组件更贴合react的设计思想`UI=render(data)`
+2. 函数组件真正的把数据和渲染绑定到了一起
+3. 函数组件与类组件相比, 缺失了一些零件， 通过hooks来实现这些零件
+
+
+
+hooks的底层依赖于顺序链表
+
 ### useState
 
 `let [x, setX] = useState()`
 
+setX 可接收一个值或者一个函数， 接收函数时, 参数为上一次的值， 接收值时, 将x设置为当前值
+
 1. 不能写在判断条件中
+
+2. 写多个useState还是写一个useState根据业务的力度
+
+  + 将完全不相关的 state 拆分为多组 state,比如 size 和 position
+  + 如果某些 state 是相互关联的，或者需要一起发生改变，就可以把它们合并为一组 state。比如 left 和 top。
 
 ### useEffect
 
@@ -101,9 +124,14 @@ useEffect(() => {
 }, [依赖])
 ```
 
+### useCallback
+
+
 ### React.memo
 
-对比前后两次props是否有修改, 有修改进行重新渲染
+包裹整个组件。 
+
+避免重新渲染: 对比前后两次props是否有修改, 有修改进行重新渲染
 
 ### useMemo
 
@@ -111,6 +139,23 @@ useEffect(() => {
 
 第二个参数是数组, 当数组项发生变化时, useMemo重新计算
 
+适用的场景
+
+1. 成本很高的计算。 有些计算开销很大，我们就需要「记住」它的返回值，避免每次 render 都去重新计算
+
+2. 保持引用相等。 由于值的引用发生变化，导致下游组件重新渲染，我们也需要「记住」这个值
+
+不适合的场景
+
+1. 返回的值是原始值
+2. 仅在组件内部用到的 object、array、函数等（没有作为 props 传递给子组件），且没有用到其他 Hook 的依赖数组中，一般不需要使用 useMemo
+
+### useRef()
+
+返回一个有带有 `current` 可变属性的普通对象.
+
+
+[React Hooks正确使用](https://zhuanlan.zhihu.com/p/85969406)
 
 ---
 
@@ -138,3 +183,15 @@ useEffect(() => {
 + 每当底层数据发生变化时, 整个UI都将在虚拟DOM描述中重新渲染
 + 然后计算之前DOM标示与新标示之间的差异
 + 完成计算后, 将只用实际更改的内容更新real DOM
+
+5. 虚拟dom的优点？
+   1. 研发体验好，效率快
+   2. 跨平台
+   3. 差量更新（在修改数据量小的情况下）,性能比较好
+
+6. react和vue的区别
+
+   1. 本质上的区别：react是构建UI的库，vue是渐进式的框架
+   2. 渲染上的区别: react通过setState去手动渲染页面 vue通过依赖收集自动响应修改
+
+   
