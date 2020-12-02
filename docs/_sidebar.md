@@ -20,23 +20,21 @@
   - [this 指向](js/this指向.md)
   - [Class](js/Class.md)
   - [函数](js/函数.md)
-  - [面试](js/interview.md)
   - [手锤代码](js/手写.md)
   - [typescript](js/typescript.md)
-
-- WebApi
-
-  - [全屏](webApi/fullscreen.md)
-  - [MutationObserver](webApi/MutationObserver.md)
-  - [History](webApi/History.md)
-  - [PageLifecycle](webApi/PageLifecycle.md)
-  - [IntersectionObserver](webApi/IntersectionObserver.md)
-  - [webWorker](weApi/webWorker.md)
-  - [Cache](webApi/cache.md)
-  - [文件相关 API](webApi/文件相关API.md)
-  - [网络相关 API](webApi/网络相关Api.md)
-  - [DOM](webApi/DOM.md)
-  - [存储](webApi/storage.md)
+  - [面试](js/interview.md)
+  - [WebApi]()
+    - [全屏](webApi/fullscreen.md)
+    - [MutationObserver](webApi/MutationObserver.md)
+    - [History](webApi/History.md)
+    - [PageLifecycle](webApi/PageLifecycle.md)
+    - [IntersectionObserver](webApi/IntersectionObserver.md)
+    - [webWorker](weApi/webWorker.md)
+    - [Cache](webApi/cache.md)
+    - [文件相关 API](webApi/文件相关API.md)
+    - [网络相关 API](webApi/网络相关Api.md)
+    - [DOM](webApi/DOM.md)
+    - [存储](webApi/storage.md)
 
 - 框架
 
@@ -66,7 +64,7 @@
   - [semver](node/npm/semver.md)
   - [ora](node/npm/ora.md)
 
-- python
+<!-- - python
 
   - [基础](python/python.md)
 
@@ -75,7 +73,7 @@
   - [MaterialApp](flutter/app配置.md)
   - [路由及导航](flutter/路由和导航.md)
   - [Scaffold](flutter/页面容器.md)
-  - [Text](flutter/Text.md)
+  - [Text](flutter/Text.md) -->
 
 - 优化
 
@@ -100,11 +98,6 @@
   - [安全](computer/safety.md)
   - [优化](computer/performance.md)
   - [缓存](computer/cache.md)
-  
-- 自动化
-
-  - [CI/CD](mode/CICD.md)
-  - [webpack](mode/webpack.md)
 
 - 看看源码
   - [vue-ref](sourceCode/vue-ref.md)
