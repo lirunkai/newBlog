@@ -1,8 +1,7 @@
 - 前端基础
 
-  - [BFC](css/BFC.md)
-  - [布局](css/layout.md)
-  - [面试](css/css面试点.md)
+  - [大话css](base/css.md)
+  - [布局](base/layout.md)
 
 - javascript
 

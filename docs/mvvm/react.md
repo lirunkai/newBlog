@@ -88,6 +88,12 @@ frame = requestAnimationFrame(callback)
 cancelAnimationFrame(frame)
 ```
 
+### Context
+
+Context有多重要呢？
+
+`react-redux`  `react-router`的核心都是通过`Context`实现
+
 ## Hooks
 
 一套能够使函数组件更强大, 更灵活的钩子
