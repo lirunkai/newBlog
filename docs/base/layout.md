@@ -1,5 +1,7 @@
 # 布局
 
+flex布局
+
 ## 水平居中
 
 1. parent `text-align: center ` child `display: inline-block`
