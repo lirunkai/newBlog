@@ -1,109 +1,73 @@
-1. [有多少小于当前数字的数字](https://leetcode-cn.com/problems/how-many-numbers-are-smaller-than-the-current-number/)
+1. [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
-解法一: 暴力搜索
-```python
-class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        dic = dict()
-        for i in nums:
-            if not i in dic:
-                dic[i] = 0
-                for j in nums:
-                    if j < i:
-                        dic[i] += 1
-        return [dic[k] for k in nums]
+```javascript
+function merge(nums1, m, nums2, n) {
+  let length = m + n
+  while(n > 0) {
+    if(m<=0) {
+      nums1[--length] = nums2[--n]
+      continue
+    }
+    nums1[--length] = nums1[m-1] >= nums2[n-1] ? nums1[--m] : nums2[--n]
+  }
+}
 ```
 
-优化解法一:
-```python
-class Solution:
-    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-        n = len(nums)
-        vec = [0] * n
-        for i in range(n):
-            vec[i] = sum(1 for j in range(n) if nums[j] < nums[i])
-        return vec
-```
+2. [两数之和](https://leetcode-cn.com/problems/two-sum/)
 
-解法二: 
-增加一个list来统计number按大小出现的次数
-增加一个返回数组来取list中处理完的数据
-```python
-class Solution:
-  def smllerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
-    n = len(nums)
-    cnt, vec = [0] * 101, [0] * n
-    for num in nums:
-      cnt[num] += 1
-    for ct in range(1, 101):
-      cnt[ct] += cnt[ct-1]
-    for i in range(len(nums)):
-      if nums[i]:
-        vec[i] = cnt[nums[i] - 1]
-    return vec
-```
+   给定一个整数数组 `nums` 和一个目标值 `target`，请你在该数组中找出和为目标值的那 **两个** 整数，并返回他们的数组下标。
 
-2. [两个数组的交集](https://leetcode-cn.com/problems/intersection-of-two-arrays/)
+   ```javascript
+   function twoSum(nums, target) {
+     let map = new Map()
+     for(let i = 0; i < nums.length; i++) {
+       if(map.has(target - nums[i])) {
+         return [map.get(target-nums[i]), i]
+       } else {
+         map.set(nums[i], i)
+       }
+     }
+     return []
+   }
+   ```
 
-```python
-class Solution:
-  def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
-    set1 = set(nums1)
-    set2 = set(nums2)
+   3. 三数之和
 
-    if len(set1) > len(set2):
-      return [x for x in set1 if x in set2]
-    else:
-      return [x for x in set2 if x in set1]
-```
+      + 先排序数组，从最小的元素开始算起
+      + 设定好最小元素后, 用双指针法, 一个指针L指向最小元素的后一个元素, 一个指针指向最大元素R
+      + 三数之和如果大于0, 则说明R太大， 需要向前走一位, R--. 反之 L太小, L++
 
-3. [只出现一次的数字](https://leetcode-cn.com/problems/single-number/)
+      ```javascript
+      function threeSum(nums, target) {
+        let ans = []
+        const len = nums.length
+        if(nums == null || len < 3) return ans
+        nums.sort()
+        for(let i = 0; i < len; i++) {
+          if(nums[i] > 0) break; // 当前数字大于0， 则3数之和一定大于0
+          if(i > 0 && nums[i] == nums[i-1]) continue; // 去重
+          let L = i + i
+          let R = len - 1
+          while(L < R) {
+            const sum = nums[i] + nums[L] + nums[R]
+            if(sum == 0) {
+              ans.push([nums[i], nums[L], nums[R]])
+              while(L < R && nums[L] == nums[L+1]) L++
+              while(L < R && nums[R] == nums[R +1]) R--
+              L++
+              R--
+            } else if(sum < 0) {
+              L++
+            } else if(sum >0) {
+              R--
+            }
+          }
+        }
+        return ans
+      }
+      ```
 
-```python
-class Solution:
-  def singleNumber(self, nums: List[int]) -> int:
-    return sum(set(nums))*2 - sum(nums)
-```
-
-4. [分糖果](https://leetcode-cn.com/problems/distribute-candies/)
-
-思路:
-
-如果种类比糖果的一半多，返回种类
-如果种类比糖果的一半少， 返回糖果的一半
-
-```python
-class Solution:
-  def distributeCandies(self, candies: List[int]) -> int:
-    category = len(set(candies))
-    half = len(candies)//2
-    if category < half:
-      return int(half)
-    else:
-      return category
-```
-
-5. [第 k 个缺失的正整数](https://leetcode-cn.com/problems/kth-missing-positive-number/)
-
-思路：
-
-1. 预置一个正整数排列数组
-2. 没有排列的位置为n
-
-```python
-class Solution:
-  def findKthPosition(self, arr:List[int], k:int) -> int:
-    arrBuf = [0] * 2001
-    for i in arr:
-      arrBuf[i] = i
-    res = 0
-    for i in range(1, len(arrBuf)):
-      if arrBuf[i] == 0:
-        res += 1
-      if res == k:
-        return i
-```
-
+      
 
 矩形数组
 

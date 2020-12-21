@@ -88,11 +88,157 @@ frame = requestAnimationFrame(callback)
 cancelAnimationFrame(frame)
 ```
 
+### 生命周期
+
+说起生命周期一定说的是类组件
+
+挂载阶段
+
+`getDerivedStateFromProps`
+
+本函数的作用是使组件在props变化时更新state。
+
+什么时候触发这个函数？
+
++ 当props被传入（不一定是变化引起的修改, 也可能是父级重新渲染了）
+
++ state发生变化
+
++ forceUpdate被调用
+
+  ```react
+  class ExampleComponent extends React.Component {
+    state = {
+      isScrollingDown: false,
+      lastRow: null
+    }
+  	static getDerivedStateFromProps(props, state) {
+      if(props.currentRow !== state.lastRow) {
+        return {
+          isScrollingDown: props.currentRow > state.lastRow,
+          lastRow: props.currentRow
+        }
+      }
+      // 返回null表示无需更新state
+      return null
+    }
+  }
+  ```
+
+  #### UNSAFE_componentWillMount
+
+  componentWillMount 用于组件即将加载前做某些操作，标记为弃用，因为在react的异步渲染机制下，该方法可能会多次调用
+
+  #### render
+
+  render函数返回的jsx结构，用于描述具体的渲染。render函数并没有真正的去渲染组件。
+
+  render函数应该是一个纯函数，不应该在里面产生副作用，比如调用setState或注册事件。
+
+  为什么不能setState？
+
+  因为render函数在每次渲染时都会调用，而setState会触发渲染。所以调用setState会触发死循环
+
+  #### componentDidMount
+
+  组件加载完成时做一些操作
+
+更新阶段
+
+#### UNSAFE_componentWillReceiveProps
+
+标记为弃用，其功能可被函数`getDerivedStateFromProps`替代
+
+另外当`getDerivedStateFromProps`存在时， `UNSAFE_componentWillReceiveProps`不会被调用
+
+#### getDerivedStateFromProps
+
+#### shouldComponentUpdate
+
+通过返回true或者false来确定是否需要触发新的渲染。 
+
+#### UNSAFE_componentWillUpdate
+
+废弃.
+
+#### render
+
+#### `getSnapshotBeforeUpdate`
+
+配合React新的异步渲染机制，在DOM更新发生前被调用，返回值将作为`componentDidUpdate`的第三个参数
+
+```react
+class ScrollingList extends React.Component{
+  constructor(props) {
+    super(props)
+    this.listRef = React.createRef()
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState){
+    if(prevProps.list.length < this.props.list.length) {
+      const list = this.listRef.current
+      return list.scrollHeight - list.scrollTop
+    }
+    return null
+  }
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if(snapshot != null) {
+      const list = this.listRef.current;
+      list.scrollTop = list.scrollHeight - snapshot;
+    }
+  }
+  
+  render() {
+    return (
+    	<div ref={this.listRef}></div>
+    )
+  }
+}
+```
+
+
+
+#### componentDidUpdate
+
+componentDidUpdate中可以使用setState， 会触发重渲染，注意小心使用避免死循环
+
+
+
+卸载阶段
+
+componentWillUnmount
+
+什么情况下会触发重新渲染？
+
++ 函数组件任何情况下都会重新渲染。 但是可以通过`React.memo`来对比前后两次props来决定是否跳过这次渲染。
++ React.Component， 不实现shouldComponentUpdate函数
+  + state发生变化.
+  + 父组件的props传入时。无论props有没有变化,只要传入就会引发重新渲染
++ React.PureComponent
+  + PureComponent默认实现了shouldComponentUpdate函数。仅在props与state浅层比较后，确认有变更时才会触发渲染
+
+渲染中发生报错后会怎样？怎么处理？
+
+错误边界是一种React组件, 这种组件可以捕获并打印发生在其子组件树任何位置的js错误，并且它会渲染出备用UI。
+
 ### Context
+
+在组件中共享此类值， 不必显示地通过组件树的逐层传递props
 
 Context有多重要呢？
 
 `react-redux`  `react-router`的核心都是通过`Context`实现
+
+```javascript
+const Context = React.createContext(null)
+
+function Provider() {
+  return (
+  	<Context.Provider></Context.Provider>
+  )
+}
+```
+
+
 
 ## Hooks
 
@@ -199,5 +345,51 @@ useEffect(() => {
 
    1. 本质上的区别：react是构建UI的库，vue是渐进式的框架
    2. 渲染上的区别: react通过setState去手动渲染页面 vue通过依赖收集自动响应修改
+
+7.  类组件和函数组件的区别？
+
+    共同点：
+
+   + 无论是函数组件还是类组件，在使用方式和最终呈现效果上都是完全一致的
+
+   不同点：
+
+   + 基础认知
+     + 类组件的根基是OOP， 面向对象编程。 可继承，有属性，有内部状态
+     + 函数组件的根基是FP，函数式编程。
+       + 于类组件而言，函数组件更纯粹，简单，易测试。
+   + 性能优化
+     + 类组件 shouldComponentUpdate
+     + 函数组件 React.memo
+   + 上手程度
+     + 类组件更容易上手
+     + React hooks式未来趋势
+
+8.  如何设计一个react组件？
+
+    组件的分类
+
+   +  只做展示, 独立运行, 不额外增加功能的组件，称为**无状态组件**
+     + 无状态组件完全受制于外部的`props`控制。具有极强的通用性，复用率也很高，与当前的前端工程关系相对薄弱，可以做跨项目级使用
+   + 处理业务逻辑与数据状态的组件称为**有状态组件**
+   + 代理组件。在需要替换时，保证兼容
+     + 样式组件
+     + 布局组件
+
+9.  setState是同步还是异步？
+
+   setState并非真正的异步，只是看着像是异步。
+
+   在源码中通过isBatchingUpdates来判断
+
+   + True 执行一步操作
+   + false 直接更新
+
+   什么情况下isBatchingUpdate为true？
+
+   + true： 在react可以控制的地方为true, 比如react的生命周期函数中, 合成事件中
+   + false:  在react无法控制的地方，比如原生事件，addEventListener, setTimeout, setInterval
+
+   异步设计是为了性能优化, 减少渲染次数, 保持内部一致性。
 
    
