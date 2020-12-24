@@ -1,4 +1,10 @@
-一般css通过`<link href>`来加载
+### 加载
+
+link or @import
+
+Link: 页面会同步加载所引的 css,  可以通过js动态加载
+
+@import:  所引用的css会等到页面加载完才加载
 
 加载完成后解析为CSSOM, 解析过程中不会阻塞DOM的解析, 但是会阻塞DOM的渲染, 等到CSSOM和DOM都解析完成后, 共同构建Layout树, 进行渲染
 
@@ -23,6 +29,10 @@
 4. 不要使用 table 布局
 
 ## 动画
+
+transition 过渡动画
+
+
 
 
 ### css选择器

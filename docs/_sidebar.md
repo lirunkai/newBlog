@@ -89,7 +89,6 @@
     - [链表](算法/链表.md)
     - [队列](算法/队列queue.md)
     - [栈](算法/栈stack.md)
-    - [堆](算法/堆Heap.md)
     - [树](算法/树Tree.md)
     - [字典](算法/HashMap.md)
   - [一些名次](computer/notification.md)
@@ -97,7 +96,7 @@
   - [安全](computer/safety.md)
   - [优化](computer/performance.md)
   - [缓存](computer/cache.md)
-
+  
 - 看看源码
   - [vue-ref](sourceCode/vue-ref.md)
   - [vue-electron](sourceCode/vue-electron.md)

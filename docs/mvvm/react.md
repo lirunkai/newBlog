@@ -238,7 +238,7 @@ function Provider() {
 }
 ```
 
-
+创建`context`实例后，需要使用`Provider`提供value，使用`Consumer`或者`useContext`订阅value
 
 ## Hooks
 
