@@ -1,8 +1,37 @@
 ## Vue
 
+3.0:
+
+ComponentApi
+
+`setup(props, context)`
+
+props是响应式的, context是普通js对象，也就是说不是响应式的
+
+context有三个属性: `attrs, slots, emit`
+
+setup函数返回一个对象
+
+
+
+3.0提升
+
+1. 静态树, vue3.0的渲染只会和动态节点的规模相关，静态节点会被复用
+
 ### 面试
 
 1. React / Vue.js 之类的框架为什么需要给组件添加 key 属性，其作用是什么？
+
+2. vnode的优势？
+
+   vnode是虚拟的dom, 也就是通过js对象来描述dom结构
+
+   一般有type, props, children
+
+   1. 抽象， 把渲染过程抽象化
+   2. 跨平台
+
+3. 
 
 
 

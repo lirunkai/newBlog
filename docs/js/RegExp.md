@@ -52,13 +52,11 @@
 
 #### regexp.exec(str)
 
-在一个指定字符串中执行一个搜索匹配, 返回一个结果数组, 或者null
+在一个指定字符串中执行一个搜索匹配, 找到匹配项返回一个结果数组,额外有两个属性input和index, 没找到或者null
 
-exec有g和没g是两种用法:
+当exec有全局标记(g)时， 每次调用exec()方法会返回一个匹配信息
 
-当exec有g时， 当前的Regexp是一个有状态的对象, 会返回上次成功匹配后的位置记录在`lastIndex`属性中。这个特性可以多次检测同一字符串
-
-没有g时, 每次都重置使用.
+没有全局标记(g)时, 无论调用多少次exec()，也只会返回第一个匹配信息
 
 ```javascript
 const regex1 = RegExp('foo*', 'g');
@@ -72,15 +70,15 @@ while ((array1 = regex1.exec(str1)) !== null) {
 
 
 
+#### regexp.test(str)
+
+如果正则表达式与指定的字符串匹配 ，返回`true`；否则`false`。
+
 #### str.match(regexp)
 
 不包含g， 返回和exec一样, [sourceString, childString, index, input]
 
 包含g, 返回匹配的所有子字符串组成的数组， 没有匹配到返回null
-
-#### regexp.test(str)
-
-如果正则表达式与指定的字符串匹配 ，返回`true`；否则`false`。
 
 #### string.replace(regexp, function(args))
 
@@ -112,7 +110,24 @@ function incrementString(input) {
 
 
 
-## **命名捕获组**
+## **捕获组**
+
+#### 捕获组
+
+RegExp最多可以存储9个捕获组的匹配项，通过`$1-$9`访问
+
+```javascript
+let text = 'this has been a short summer'
+let pattern = /(..)or(.)/g
+if(pattern.test(text)) {
+  console.log(RegExp.$1)
+  console.log(RegExp.$2)
+}
+```
+
+
+
+#### 命名捕获组
 
 在`()`里面使用`?<name>`标识
 

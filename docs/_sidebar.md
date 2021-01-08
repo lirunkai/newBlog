@@ -1,7 +1,8 @@
-- 前端基础
+- 前端啊
   - [不得不聊的基础](base/html.md)
   - [大话css](base/css.md)
   - [布局](base/layout.md)
+  - [优化](base/performance.md)
 
 - javascript
 
@@ -73,12 +74,6 @@
   - [路由及导航](flutter/路由和导航.md)
   - [Scaffold](flutter/页面容器.md)
   - [Text](flutter/Text.md) -->
-
-- 优化
-
-  - [缓存](chrome/cache.md)
-  - [性能优化](chrome/performance.md)
-  - [安全](chrome/safety.md)
 
 - 计算机
   - [设计模式](computer/设计模式.md)

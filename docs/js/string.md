@@ -6,7 +6,15 @@
 
 `str.slice(start, end)`
 
-提取字符串的一部分, 原字符串保持不变
+提取字符串的一部分, 原字符串保持不变，如果为负值则转换为字符串长度+负值
+
+`str.substring(start, end)`
+
+提取从start到end的字符串, 不包含end， `如果任一参数小于 0 或为 NaN，则被当作 0` `如果 indexStart 大于 indexEnd, start和end对换提取`
+
+`str.substr(start, length)`
+
+提取从`start`开始的指定数目的字符，如果第一个参数为负值, 转换为字符串长度+该值, 第二个参数为负值, 转换为0
 
 `split(分割符, limit)`
 
@@ -26,14 +34,6 @@
 
 返回一个由替换值替换一些或所有匹配的模式后的新字符串
 
-`str.substring(start, end)`
-
-提取从start到end的字符串, 不包含end， `如果任一参数小于 0 或为 NaN，则被当作 0` `如果 indexStart 大于 indexEnd, start和end对换提取`
-
-`str.substr(start, length)`
-
-提取从`start`开始的指定数目的字符
-
 `str.trim()`
 
 `str.toLowerCase()` 将所有字母进行小写转换
@@ -46,7 +46,9 @@
 
 |  lodash  _.capitalize(string)  首字母大写, 其他字母小写, 返回转换后的字符串
 
-### 无索引
+### 匹配
+
+#### 无索引
 
 `str.endsWith(searchString, position)`
 
@@ -68,10 +70,7 @@
 
 没g 返回一个数组, 包含input（解析的原始字符串）
 
-
-
-
-### 有索引
+#### 有索引
 
 `str.indexOf(searchString, position)`
 
