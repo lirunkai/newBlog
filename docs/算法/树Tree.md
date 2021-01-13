@@ -131,7 +131,7 @@ function rightSideView(root) {
 }
 ```
 
-#### 二叉树最近公共祖先
+#### 二叉搜索树最近公共祖先
 
 递归解法
 
