@@ -81,6 +81,25 @@ def postorder(self, root):
     self.traverse_path.append(root.val)
 ```
 
+#### [将有序数组转换为二叉搜索树](https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/)
+
+```javascript
+function sortedArrayToBST(nums) {
+  if(nums.length == 0) return null
+  let mid = nums.length >> 1
+  let root = new TreeNode(nums[mid])
+  root.left = sortedArray(nums.slice(0, mid))
+  root.right = sortedArray(nums.slice(mid+1))
+  return root
+}
+```
+
+
+
+深度优先
+
+广度优先
+
 #### 层序遍历,一层接一层，从左到右
 
 思路： 借助queue队列, 左子节点先入队, 右子节点后入
@@ -107,6 +126,50 @@ function levelOrder(root) {
 }
 ```
 
+根据二叉树的前序遍历和中序遍历恢复二叉树, 并打印出二叉树的右视图
+
+```javascript
+function solve(xianxu, zhongxu) {
+  // 构建二叉树
+  function buildThree(preorder, inorder) {
+    if(!preorder.length) return null
+    const rootVal = preorder[0]
+    const root = new ListNode(rootVal)
+    const rootIndex = inorder.indexOf(rootVal)
+    const left = inorder.slice(0, rootIndex)
+    const right = inorder.slice(rootIndex + 1)
+    if(left.length) {
+      root.left = buildThree(preorder.slice(1, left.length + 1), left)
+    }
+    if(right.length) {
+      root.right = buildThree(preorder.slice(left.length +1), right)
+    }
+    return root
+  }
+  
+  const root = buildThree(xianxu, zhongxu)
+  let queue = [root]
+  const res = []
+  while(queue.length) {
+    const temp = []
+    const curr = []
+    while(queue.length) {
+      let node = queue.shift()
+      if(node) {
+        curr.push(node.val)
+        if(node.left) temp.push(node.left)
+        if(node.right) temp.push(node.right)
+      }
+    }
+    curr.length && res.push(curr[curr.length - 1])
+    queue = temp
+  }
+  return res
+}
+```
+
+
+
 #### 二叉树的右侧视图
 
 ```javascript
@@ -130,6 +193,31 @@ function rightSideView(root) {
   return res
 }
 ```
+
+#### 二叉树的最近公共祖先
+
+思路:
+
+对于根节点root, p, q的分布, 有两种可能
+
++ p， q在root的两侧, 则最近公共祖先为root
++ p, q在root的同一个子树中, 则问题转化为规模小一点的相同问题
+
+```javascript
+function lowestCommonAncestor(root, p, q) {
+  if(root == null) return null
+  if(root == p || root == q) return root
+  
+  const left = lowestCommonAncestor(root.left, p, q)
+  const right = lowestCommonAncestor(root.right, p, q)
+  
+  if(left && right) return root
+  if(left == null) return right
+  return left
+}
+```
+
+
 
 #### 二叉搜索树最近公共祖先
 
@@ -587,7 +675,7 @@ function swap(arr, i, j) {
        for(let i = k; i< nums.length; i++) {
          if(heap[1] < nums[i]) {
            heap[1] = nums[i]
-           heapify(heap, k, i)
+           heapify(heap, k, 1)
          }
        }
        return heap[1]
@@ -604,10 +692,10 @@ function swap(arr, i, j) {
          let minIndex = i
          const leftI = 2 * i
          const rightI = 2 * i + 1
-         if(leftI < k && heap[leftI] < heap[i]) {
+         if(leftI <= k && heap[leftI] < heap[i]) {
            minIndex = leftI
          }
-         if(rightI < k && heap[rightI] < heap[minIndex]) {
+         if(rightI <= k && heap[rightI] < heap[minIndex]) {
            minIndex = rightI
          }
          if(minIndex != i) {
