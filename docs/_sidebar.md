@@ -64,17 +64,6 @@
   - [semver](node/npm/semver.md)
   - [ora](node/npm/ora.md)
 
-<!-- - python
-
-  - [基础](python/python.md)
-
-- Flutter
-
-  - [MaterialApp](flutter/app配置.md)
-  - [路由及导航](flutter/路由和导航.md)
-  - [Scaffold](flutter/页面容器.md)
-  - [Text](flutter/Text.md) -->
-
 - 计算机
   - [设计模式](computer/设计模式.md)
     - [策略模式和状态模式](computer/策略模式&状态模式.md)
@@ -95,7 +84,16 @@
   - [安全](computer/safety.md)
   - [优化](computer/performance.md)
   - [缓存](computer/cache.md)
-  
+
+- python
+  - [基础](python/python.md)
+
+- Flutter
+  - [MaterialApp](flutter/app配置.md)
+  - [路由及导航](flutter/路由和导航.md)
+  - [Scaffold](flutter/页面容器.md)
+  - [Text](flutter/Text.md)
+
 - 看看源码
   - [vue-ref](sourceCode/vue-ref.md)
   - [vue-electron](sourceCode/vue-electron.md)
