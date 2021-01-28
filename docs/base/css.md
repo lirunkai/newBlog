@@ -137,6 +137,13 @@ ie盒模型： width和height包含 content, padding, border
 
 ```css
 .square {
+  width: 10vw;
+  height: 10vw;
+  background: red;
+}
+
+// pandding和margin的百分比是参照父元素的width属性
+.square {
   width: 20%;
   height: 0;
   padding-top: 20%;

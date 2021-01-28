@@ -52,7 +52,7 @@ loader是用来加载处理各种形式的资源,本质上是一个函数, 接�
 
 ## plugins
 
-在webpack的每个运行期间都可以进行操作.
+在webpack的每个运行期间都可以进行操作. 通常用来做loader做不到的事情
 
 ## optimization
 

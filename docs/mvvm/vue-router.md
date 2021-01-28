@@ -1,64 +1,31 @@
 Vue-router
 
-[传送门](https://router.vuejs.org/zh/)
+原理
+
+HTML5 提供了 History API 来实现 URL 的变化。其中做最主要的 API 有以下两个：history.pushState() 和 history.repalceState()。这两个 API 可以在不进行刷新的情况下，操作浏览器的历史纪录。唯一不同的是，前者是新增一个历史记录，后者是直接替换当前的历史记录
+
++ pushState 和 repalceState 两个 API 来操作实现 URL 的变化 
++ 我们可以使用 popstate 事件来监听 url 的变化。只有在做出浏览器动作时，才会触发该事件，如用户点击浏览器的回退按钮（或者在Javascript代码中调用`history.back()`或者`history.forward()`方法）
++ history.pushState() 或 history.replaceState() 不会触发 popstate 事件，这时我们需要手动触发页面跳转（渲染）
 
 安装
 
-`yarn add vue-router`
+`yarn add vue-router@4`
 
 使用
 
-```
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter) 
-
-// 敲黑板
-let routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+```javascript
+const routes = [
+	{ path: '/', component: Home},
+	{ path: '/about', component: About}
 ]
-// 敲黑板
-let  router = new VueRouter({
-    routes,
-    mode
+
+const router = VueRouter.createRouter({
+	history: VueRouter.createWebHasHistory(),
+	routes
 })
 
-new Vue(
-    routes
-)
+const app = Vue.createApp({})
+app.use(router)
 ```
-
-### `在Vue.use(VueRouter)之后发生了什么？`
-
-1. `$route`挂载到`Vue.prototype`上
-2. `$router`挂载到`Vue.prorotype`上
-3. 注册了全局组件`router-link`
-4. 注册了全局组件`router-view`
-
-`$route`上存储当前路由的信息
-
-`$router`可以调用路由的方法
-
-## mode
-
-`history | hash | abstract`
-
-## routes都有哪些定义好的属性
-
-`path` 路径
-
-`component` 组件
-
-`children` 子集
-
-`redirect` 重定向
-
-`alias` 别名
-
-`meta`  数据元信息
-
-## 关于路由守卫
-
-`beforeEach`
 

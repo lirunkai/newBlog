@@ -1,16 +1,19 @@
 1. [合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
 ```javascript
-function merge(nums1, m, nums2, n) {
-  let length = m + n
-  while(n > 0) {
-    if(m<=0) {
-      nums1[--length] = nums2[--n]
-      continue
+var merge = function(nums1, m, nums2, n) {
+    let l1 = m - 1
+    let l2 = n - 1
+    let len = m + n -1
+    while(l2 >= 0) {
+        if(l1 < 0) {
+            nums1[len--] = nums2[l2--]
+            continue
+        }
+        nums1[len--] = nums1[l1] > nums2[l2] ? nums1[l1--] : nums2[l2--]
     }
-    nums1[--length] = nums1[m-1] >= nums2[n-1] ? nums1[--m] : nums2[--n]
-  }
-}
+    return nums1
+};
 ```
 
 2. [两数之和](https://leetcode-cn.com/problems/two-sum/)
