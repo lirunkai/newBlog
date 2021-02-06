@@ -32,6 +32,33 @@ Link: 页面会同步加载所引的 css,  可以通过js动态加载
 
 transition 过渡动画
 
+```css
+div:hover {
+  transition: 2s;
+  transform: translateX(100px);
+}
+```
+
+animation
+
+1. 通过`@keyframe`定义规则
+2. 使用animation 规则
+
+```css
+@keyframes myfirst
+{
+0%   {background:red; left:0px; top:0px;}
+25%  {background:yellow; left:200px; top:0px;}
+50%  {background:blue; left:200px; top:200px;}
+75%  {background:green; left:0px; top:200px;}
+100% {background:red; left:0px; top:0px;}
+}
+
+animation: myfirst 2s;
+```
+
+
+
 
 
 
@@ -192,7 +219,7 @@ ie盒模型： width和height包含 content, padding, border
 
 ## BFC
 
-块级格式上下文， 提供了一个环境, 环境中的元素不会影响到其它环境中的布局
+块级格式上下文， 是一个隔离的独立容器。
 
 它决定了元素如何对其内容进行定位以及与其他元素的关系和相互作用
 
@@ -206,7 +233,9 @@ ie盒模型： width和height包含 content, padding, border
 
 解决了什么？？
 
-垂直方向上的margin重叠
++ 垂直方向上的margin合并
++ 自适应两栏布局
++ 清除浮动
 
 **BFC的布局规则，特征:**  
 
@@ -222,3 +251,37 @@ ie盒模型： width和height包含 content, padding, border
 
 > 饮用
 > [关于CSS-BFC深入理解](https://juejin.im/post/5909db2fda2f60005d2093db#heading-16)
+
+
+
+#### z-index的层级关系
+
++ 只有设置了`position为relative, absolute, fixed`才有作用
++ 对比时需要先对比父级别的`z-index`
+
+`z-index`的层级关系只有在同一父级元素下才有意义， 也就是说跨父级别的子元素对比z-index没有意义， 应该先找到同一层级下的父元素对比其`z-index`。
+
+
+
+#### 定位的相对位置
+
+`postion:relative`是相对于元素的正常位置，但没有脱离文档流。宽高不变，设置偏移量不会影响其他元素的位置
+
+`position:absolute`是相对于最近已定位的祖先元素，如果没有，就相对于body做偏移。 脱离文档流。
+
+
+
+#### flex布局的相关属性
+
+`flex`是 `flex-grow,flex-shrink,flex-basis`
+
+`flex-direction`
+
+`flex-wrap`
+
+`jusitify-content`
+
+`align-items`
+
+`align-self`
+
