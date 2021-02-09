@@ -2,7 +2,10 @@
   - [不得不聊的基础](base/html.md)
   - [大话css](base/css.md)
   - [布局](base/layout.md)
+  - [js](base/js.md)
+  - [webpack](base/webpack.md)
   - [优化](base/performance.md)
+  - [框架](base/框架.md)
 
 - javascript
 
@@ -35,14 +38,6 @@
     - [网络相关 API](webApi/网络相关Api.md)
     - [DOM](webApi/DOM.md)
     - [存储](webApi/storage.md)
-
-- 框架
-
-  - [框架](mvvm/框架.md)
-  - [vue](mvvm/vue.md)
-  - [vue or react](mvvm/vue和react的diff.md)
-  - [react](mvvm/react.md)
-  - [状态管理](mvvm/状态管理.md)
 
 - nodejs
 
@@ -82,8 +77,6 @@
   - [一些名次](computer/notification.md)
   - [小技巧](computer/command.md)
   - [安全](computer/safety.md)
-  - [优化](computer/performance.md)
-  - [缓存](computer/cache.md)
 
 - python
   - [基础](python/python.md)
