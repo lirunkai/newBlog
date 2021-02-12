@@ -81,6 +81,7 @@
 3. 只对可视区域进行渲染
 4. 预加载preload/prefetch
    1. `<link rel="preload" as="script" href="">`
+   2. `<link rel="dns-prefetch" href="//wq.test.com"/>` 提前解析dns
 5. 懒加载
 
 

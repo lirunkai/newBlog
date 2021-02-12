@@ -269,3 +269,10 @@ nodejs中的宏任务分成了几种类型, 并且放在了不同的`task queue`
 + **CommonJS 模块输出的是一个值的拷贝，ES6 模块输出的是值的引用**
 + **CommonJS 模块是运行时加载，ES6 模块是编译时输出接口**。
 
+
+
+##### `isNaN` 和 `Number.isNaN`的区别
+
+`isNaN`会先将参数转为数值，不能转为数字的返回true
+
+`Number.isNaN`会首先判断传入参数是否为数字，如果是数字再继续判断是否为NaN

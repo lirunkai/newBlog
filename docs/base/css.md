@@ -285,3 +285,39 @@ ie盒模型： width和height包含 content, padding, border
 
 `align-self`
 
+
+
+#### 项目中对css的处理
+
++ 前缀
+  + `postcss-loader` 
+  
+    ```javascript
+    module.exports = {
+      module: {
+        rules: [
+          {
+            test: /\.css$/i,
+            use: [
+              'style-loader',
+              'css-loader',
+              {
+                loader: 'postcss-loader',
+                options: {
+                  postcssOptions: {
+                    plugins: [
+                      require('autoprefixer')
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+  
++  压缩`css-minimizer-webpack-plugin`
+
++ `mini-css-extract-plugin`

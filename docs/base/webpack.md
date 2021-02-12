@@ -12,6 +12,7 @@ Source Map
 + 缓存babel编译过的文件
 +  tree shaking删除冗余代码
 + 按需加载，按需引入
++ DllWebpackPlugin-> webpack4(HardSourceWebpackPlugin) -> webpack5(内部支持)
 
 
 
@@ -62,16 +63,6 @@ module.exports = {
 		]
 	}
 }
-```
-
-
-
-第三方库
-
-```
-new webpack.DllReferencePlugin({
-  manifest: resolve(__dirname, "dll/manifest.json"),
-}),
 ```
 
 
