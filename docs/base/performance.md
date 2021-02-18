@@ -1,9 +1,11 @@
 ## 性能优化
 
-前端性能
+影响页面渲染的因素
 
-1. 页面加载速度
-2. 浏览时动态加载数据过多时的卡顿
+1. 网络延迟
+2. 资源体积过大
+3. 重复加载资源
+4. 加载脚本时，渲染内容阻塞
 
 
 
@@ -11,14 +13,13 @@
 
 1. lighthouse 自动对网站做一个质量评估
 2. Performance
+   1. js中的`window.performance.timing`对象上有各个阶段的耗时
 3. Web pack 分析包`webpack-bundle-analyzer`
 4. Source-map
 
 
 
-怎么优化？
-
-静态文件的终极优化策略：
+##### 静态文件的终极优化策略：
 
 1. 缓存 => 配置超长时间的缓存,节省带宽, 提高性能
    1. `http响应头`
@@ -37,54 +38,72 @@
 
 
 
-网络层面
+#### 怎么优化？
 
-1. 增加缓存cache-control/last-modified/if-modified-since/etag/if-none-match
+##### 资源加载优化
 
-   1. Cache-control  和 max-age
++ 减少http请求
 
-      1. `no-cache` 不缓存
-      2. `no-store` 禁止缓存
-      3. `private` 仅UA缓存
-      4. `public` 都可以缓存
+  + 缓存cache-control/last-modified/if-modified-since/etag/if-none-match
 
-   2.  `Etag` 和 `If-None-Match`
+    + Cache-control  和 max-age
+
+      + `no-cache` 不使用前置缓存，检查协商缓存
+      + `no-store` 禁止缓存
+      + `private` 仅UA缓存
+      + `public` 都可以缓存
+
+    + `Etag` 和 `If-None-Match`
 
       `Etag` 表示资源的版本, 浏览器在发送请求时会带`If-None-Match`头字段, 来询问服务器该版本是否仍然可用。 可用则返回304状态码。
 
-   3. `Last-Modified` 和 `If-Modified-Since` 检查修改时间
+    + `Last-Modified` 和 `If-Modified-Since` 检查修改时间
 
-2. 减少cookie传输
+  + 懒加载
 
-3. 压缩文件`nginx 开启gzip`
+  + 按需加载
 
-4. 应用http2
+  + 合并请求
 
-   1. 首部压缩
-   2. 多路复用
-   3. 服务端推送
-   4. 二进制分帧
-   
-5.  减少http请求
+    + 雪碧图
+    + 小图片使用base64 
 
-   1. 雪碧图
-   2. 小图片使用base64
-   3. 按需加载
-   4. 懒加载图片
++ 提高响应速度
+
+  + cdn
+  + DNS Prefetch
+  + 应用http2
+    + 首部压缩
+    + 多路复用
+    + 服务端推送
+    + 二进制分帧
+
++ 减少资源大小
+
+  + 代码压缩
+  + 代码拆分
+  + 图片压缩
+
++ 优化资源加载方式
+
+  + ssr
 
 
 
-页面
+##### 页面渲染优化
 
-1. 减少回流与重绘
-2. 骨架屏
-3. 只对可视区域进行渲染
-4. 预加载preload/prefetch
-   1. `<link rel="preload" as="script" href="">`
-   2. `<link rel="dns-prefetch" href="//wq.test.com"/>` 提前解析dns
-5. 懒加载
-
-
++ 优化html
+  + js外链放在底部
+  + css外链放在顶部
+  + 减少dom层级
++ 优化js/css
+  + 减少重绘，重排
+  + 降低css选择器复杂性
+  + 缓存dom查找
+  + 通过class名方式修改元素样式
++ 优化动画
+  + 使用requestAnimationFrame
+  + 使用绝对定位或者固定定位
 
 webpack
 
