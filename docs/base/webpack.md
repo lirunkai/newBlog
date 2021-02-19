@@ -13,6 +13,7 @@ Source Map
 +  tree shaking删除冗余代码
 + 按需加载，按需引入
 + DllWebpackPlugin-> webpack4(HardSourceWebpackPlugin) -> webpack5(内部支持)
++ `terser-webpack-plugin`压缩js文件
 
 
 

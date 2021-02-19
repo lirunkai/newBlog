@@ -103,7 +103,25 @@ js是单进程的。
 
 
 
+##### proxy可以拦截哪些操作
 
+`get` `set` `deleteProperty` 
+
+`has` in操作
+
+ `ownKeys`  for....in等循环操作
+
+`apply` 拦截proxy实例作为函数调用的操作
+
+`constructor` 拦截proxy实例作为构造函数调用的操作
+
+`setPrototype` 拦截`Object.setPrototype`，返回一个boolean
+
+`getPrototypeOf(target)`：拦截`Object.getPrototypeOf(proxy)`，返回一个对象
+
+##### Reflect
+
+在proxy内部调用对象的默认行为。
 
 
 
