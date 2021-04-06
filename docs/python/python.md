@@ -102,6 +102,10 @@ for x in range(1, len(names)):
 
 `len(list)` 表示 list 的长度
 
+`max(list)` 返回列表元素最大值
+
+`min(list)` 返回列表元素最小值
+
 `list.append(item)` 插入元素到 list 末尾
 
 `list.insert(index, item)` 插入元素到 list 的 index 位置
@@ -110,9 +114,9 @@ for x in range(1, len(names)):
 
 `list.remove(x)` 移除列表中第一个值为 x 的元素
 
-`list.pop()` 删除队尾元素
+`list.pop()` 删除队尾元素，并且返回该元素
 
-`list.pop(index)` 删除索引位置的元素
+`list.pop(index)` 删除索引位置的元素， 并且返回该元素
 
 `list.clear()` 清空列表
 
